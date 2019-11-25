@@ -12,13 +12,14 @@
       <h1 class="logo"><a href="#">TITLE/LOGO OF PROJECT</a></h1>
       <ul class="main-nav">
         <li><a href="index.html">Home</a></li>
-        <li><form action="/addPost" method="get"><button type="submit">Add a post</button></form></li>
+        <li><form action="/postPage" method="get"><button type="submit">Add a post</button></form></li>
       </ul>
     </header>
     <div name="sectionOne">
       <h1>Anonymous journal writing and sharing made easy.</h1>
     </div>
     <div class="flexContainer">
+      <!-- Presents all blog entries -->
       <% for (let i = 0; i < entries.length; i++) { %>
         <div name="entry">
           <%= JSON.stringify(entries[i].title).replace(/['"]+/g,'') %> <br>
