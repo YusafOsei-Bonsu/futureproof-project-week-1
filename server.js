@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const http = require('http');
+const fs = require('fs');
 
 // Making an express application
 const server = express();
@@ -29,10 +30,26 @@ server.get('/addPost', (req, res) => {
     // console.log(newEntry);
 });
 
+//route for making an entry
 server.post('/addpost', (req, res) => {
+    // The data written by the user
     let newEntry = req.body.newEntry;
-    // res.status(200).render('addpost');
-    console.log(newEntry);
+
+    //passing data from input into the json file
+    fs.readFile('./entries.json', 'utf-8', (err, data) => {
+        if (err) throw err;
+        // Object into string
+        let listOfEntries = JSON.parse(data);
+        // We're adding the user's entry to the list of entries
+        listOfEntries.push({message : newEntry});
+        // Storing the entry in the json file
+        fs.writeFile('./entries.json', JSON.stringify(listOfEntries), 'utf-8', err => {
+            if (err) throw err;
+            console.log('Done!');
+        });
+    });
+    //  Navigating back to the add-post page
+    res.redirect("http://localhost:8080/addpost");
 });
 
 // Listening to the server at port 8080
