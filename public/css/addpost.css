@@ -77,13 +77,17 @@ h1 {
   flex-direction: column;
 }
 
-textarea {
+textarea,
+input[type="text"] {
   border-radius: 12px;
-  width: 350px;
-  height: 250px;
   border: gray 1px solid;
   box-shadow: 0 0 5px #999999;
   padding: 15px 20px;
+  width: 350px;
+}
+
+textarea {
+  height: 250px;
 }
 
 input[type="button"],
