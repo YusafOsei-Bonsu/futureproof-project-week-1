@@ -10,8 +10,9 @@ const server = express();
 
 // Render HTML files (from 'views' directory) using the EJS views engine
 server.set("views", `${__dirname}/views`);
-server.engine("html", require("ejs").renderFile);
-server.set("view engine", "html");
+
+// Using the EJS template engine to view EJS files on browser
+server.set("view engine", "ejs");
 
 // Accessing CSS & JS files
 server.use(cors());
@@ -21,20 +22,23 @@ server.use(express.urlencoded({ extended: true }));
 // Parses bodies from url
 server.use(bodyParser.urlencoded({ extended: true }));
 
-// By entering localhost:8080 in the address bar, we navigate to another page
-
-server.get("/", (req, res) => res.status(200).render("index.html"));
-
-server.get("/addPost", (req, res) => {
-  res.status(200).render("addpost");
+// By entering localhost:8080 in the address bar, we navigate to homepage
+server.get("/", (req, res) => {
+    fs.readFile('./entries.json', 'utf-8', (err, data) => {
+        let blogEntries = JSON.parse(data);
+        res.status(200).render("index", {entries: blogEntries});
+    });
 });
 
+// Navigates to a page where users can create blog entries
+server.get("/postPage", (req, res) => res.status(200).render("addpost"));
+
 //route for making an entry
-server.post('/addpost', (req, res) => {
+server.post('/addPost', (req, res) => {
     //passing data from input into the json file
     fs.readFile('./entries.json', 'utf-8', (err, data) => {
         if (err) throw err;
-        // Object into string
+        // JSON string into JS object
         let listOfEntries = JSON.parse(data);
         // We're adding the user's entry to the list of entries
         listOfEntries.push(req.body);
@@ -45,7 +49,7 @@ server.post('/addpost', (req, res) => {
         });
     });
     //  Navigating back to the add-post page
-    res.redirect("http://localhost:8080/addpost");
+    res.redirect("http://localhost:8080/postPage");
 });
 
 // Listening to the server at port 8080
