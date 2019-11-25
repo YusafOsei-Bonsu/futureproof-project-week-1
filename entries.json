@@ -1,1 +1,10 @@
-[{"title":"fhgbv","user":"fghfhdfhfghf","newEntry":"gfdhdfghdfh","addBtn":"Submit"},{"title":"asda","user":"adad","newEntry":"adasda"},{"title":"Hello","user":"There","newEntry":"Hello world!"}]
+[
+    {"title":"fhgbv","user":"fghfhdfhfghf","newEntry":"gfdhdfghdfh","addBtn":"Submit"},
+    {"title":"asda","user":"adad","newEntry":"adasda"},
+    {"title":"Hello","user":"There","newEntry":"Hello world!"},
+    {"title":"Testing","user":"Grab a pint!","newEntry":"White girl wasted!"},
+    {"title":"fhgbv","user":"fghfhdfhfghf","newEntry":"gfdhdfghdfh","addBtn":"Submit"},
+    {"title":"asda","user":"adad","newEntry":"adasda"},
+    {"title":"Final year project","user":"Brunel","newEntry":"Hellooooooo"},
+    {"title":"My blog","user":"Liz","newEntry":"Whatever."}
+]
