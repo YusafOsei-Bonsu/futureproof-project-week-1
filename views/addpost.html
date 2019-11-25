@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/addpost.css" />
   </head>
   <body>
@@ -33,17 +37,29 @@
                 <textarea
                 name="newEntry"
                 id="newentry"
-                placeholder="Add new entry"></textarea>
-                  
-                <br />
+                placeholder="Add new entry"></textarea><br>
+                <br>
                 <input
-                  type="submit"
-                  name="addBtn"
-                  id="addBtn"
-                  value="Submit"
-                /><br />
-              </div>
-              </form>
+                type="text"
+                name="giphy"
+                id="giphy"
+                placeholder="Add giphy"/><br>
+
+                <input
+                type="button"
+                name="searchgiphy"
+                id="searchgiphy"
+                value="Search Giphy"/><br>
+
+                <input
+                type="submit"
+                name="entrysubmit"
+                id="entrysubmit"
+                value="Submit">
+                </form>
+
+                </div>
+    </div>
 
 
   </body>
