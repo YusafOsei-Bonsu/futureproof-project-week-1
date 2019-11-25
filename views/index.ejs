@@ -19,11 +19,11 @@
       <h1>Anonymous journal writing and sharing made easy.</h1>
     </div>
     <div class="flexContainer">
-      <% for (let i = 0; i < e.length; i++) { %>
+      <% for (let i = 0; i < entries.length; i++) { %>
         <div name="entry">
-          <%= JSON.stringify(e[i].title).replace(/['"]+/g,'') %> <br>
-          <%= JSON.stringify(e[i].user).replace(/['"]+/g,'') %> <br>
-          <%= JSON.stringify(e[i].newEntry).replace(/['"]+/g,'') %>
+          <%= JSON.stringify(entries[i].title).replace(/['"]+/g,'') %> <br>
+          <%= JSON.stringify(entries[i].user).replace(/['"]+/g,'') %> <br>
+          <%= JSON.stringify(entries[i].newEntry).replace(/['"]+/g,'') %>
         </div>
       <% } %>
 
