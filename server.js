@@ -20,7 +20,7 @@ server.use(express.urlencoded({extended: true}));
 // Parses bodies from url
 server.use(bodyParser.urlencoded({extended: true}));
 
-// By entering localhost:8080 in the address bar, we navigate to another page
+// By entering localhost:8080 in the address bar, we navigate to the homepage
 server.get('/', (req, res) => res.status(200).render('index'));
 
 server.get('/addPost', (req, res) => {
