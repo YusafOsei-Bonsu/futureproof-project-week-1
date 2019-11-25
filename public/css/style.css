@@ -26,12 +26,12 @@ ul {
 }
 
 .flexContainer > div {
-  background-color: grey;
-  width: 100px;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
+  border-radius: 12px;
+  width: 350px;
+  height: 250px;
+  border: gray 1px solid;
+  box-shadow: 0 0 5px #999999;
+  padding: 15px 20px;
 }
 
 a {
@@ -72,4 +72,8 @@ a {
   display: flex;
   text-align: center;
   justify-content: space-evenly;
+}
+
+h1 {
+  text-align: center;
 }

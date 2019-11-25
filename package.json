@@ -27,8 +27,5 @@
   "bugs": {
     "url": "https://github.com/YusafOsei-Bonsu/futureproof-project-week-1/issues"
   },
-  "homepage": "https://github.com/YusafOsei-Bonsu/futureproof-project-week-1#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/YusafOsei-Bonsu/futureproof-project-week-1#readme"
 }
