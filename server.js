@@ -31,17 +31,13 @@ server.get("/addPost", (req, res) => {
 
 //route for making an entry
 server.post('/addpost', (req, res) => {
-    // The data written by the user
-    let newEntry = req.body.newEntry;
-    let title = req.body.title;
-    let user = req.body.user;
     //passing data from input into the json file
     fs.readFile('./entries.json', 'utf-8', (err, data) => {
         if (err) throw err;
         // Object into string
         let listOfEntries = JSON.parse(data);
         // We're adding the user's entry to the list of entries
-        listOfEntries.push({message : newEntry});
+        listOfEntries.push(req.body);
         // Storing the entry in the json file
         fs.writeFile('./entries.json', JSON.stringify(listOfEntries), 'utf-8', err => {
             if (err) throw err;
