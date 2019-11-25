@@ -31,7 +31,6 @@ server.get("/addPost", (req, res) => {
 
 //route for making an entry
 server.post('/addpost', (req, res) => {
-    // The data written by the user
     //passing data from input into the json file
     fs.readFile('./entries.json', 'utf-8', (err, data) => {
         if (err) throw err;
