@@ -31,6 +31,7 @@ server.get('/addPost', (req, res) => {
 
 server.post('/addpost', (req, res) => {
     let newEntry = req.body.newEntry;
+    // res.status(200).render('addpost');
     console.log(newEntry);
 });
 
