@@ -20,20 +20,22 @@ server.use(express.urlencoded({extended: true}));
 // Parses bodies from url
 server.use(bodyParser.urlencoded({extended: true}));
 
-// By entering localhost:8080 in the address bar, we navigate to the homepage
+
+// By entering localhost:8080 in the address bar, we navigate to another page
+
 server.get('/', (req, res) => res.status(200).render('index'));
 
 server.get('/addPost', (req, res) => {
-    // let newEntry = res.body.newEntry;
-    res.status(200).render('addpost');
-    // console.log(newEntry);
-});
-
-server.post('/addpost', (req, res) => {
-    let newEntry = req.body.newEntry;
+    let newEntry = res.body.newEntry;
     // res.status(200).render('addpost');
     console.log(newEntry);
+      let title = req.body.title;
+    console.log(title)
+
+    let user = req.body.user;
+    console.log(user)
 });
+
 
 // Listening to the server at port 8080
 server.listen(8080, () => console.log('Listening to port 8080'));
