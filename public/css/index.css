@@ -93,31 +93,8 @@ a {
   margin-top: 35%;
 }
 
-#likeEmoji:hover {
-  cursor: pointer;
-  width: 120%;
-  height: 120%;
-}
-
-#dislikeEmoji:hover {
-  cursor: pointer;
-  width: 120%;
-  height: 120%;
-}
-
-#loveEmoji:hover {
-  cursor: pointer;
-  width: 120%;
-  height: 120%;
-}
-
-#happyEmoji:hover {
-  cursor: pointer;
-  width: 120%;
-  height: 120%;
-}
-
-#sadEmoji:hover {
+/* By hovering over the emojis, they increase in size by 20% */
+img:hover {
   cursor: pointer;
   width: 120%;
   height: 120%;
