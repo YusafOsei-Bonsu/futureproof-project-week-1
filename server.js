@@ -26,8 +26,10 @@ server.use(bodyParser.urlencoded({extended: true}));
 server.get('/', (req, res) => res.status(200).render('index'));
 
 server.get('/addPost', (req, res) => {
+    res.status(200).render('addpost');
+
     let newEntry = res.body.newEntry;
-    // res.status(200).render('addpost');
+   
     console.log(newEntry);
       let title = req.body.title;
     console.log(title)
@@ -35,6 +37,9 @@ server.get('/addPost', (req, res) => {
     let user = req.body.user;
     console.log(user)
 });
+
+
+
 
 
 // Listening to the server at port 8080
