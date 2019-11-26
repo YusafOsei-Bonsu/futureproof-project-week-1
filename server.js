@@ -30,6 +30,9 @@ server.get("/", (req, res) => {
   });
 });
 
+// Navigates to a page where users can comment on blog entries
+server.get("/commentPage", (req, res) => res.status(200).render('comments'));
+
 // Navigates to a page where users can create blog entries
 server.get("/postPage", (req, res) => res.status(200).render("addpost"));
 
