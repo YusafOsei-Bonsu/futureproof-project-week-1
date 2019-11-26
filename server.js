@@ -34,7 +34,7 @@ server.get("/", (req, res) => {
 server.get("/commentPage", (req, res) => res.status(200).render('comments'));
 
 // Navigates to a page where users can create blog entries
-server.get("/postPage", (req, res) => res.status(200).render("addpost"));
+server.get("/postPage", (req, res) => res.status(200).render('addpost'));
 
 //route for making an entry
 server.post("/addPost", (req, res) => {
@@ -54,23 +54,6 @@ server.post("/addPost", (req, res) => {
   });
   //  Navigating back to the add-post page
   res.redirect("http://localhost:8080/postPage");
-});
-
-server.post("/addPost", (req, res) => {
-  res.status(200).render("addpost");
-
-  const userInput = req.body.giphy; // "keyword" is either the id or the name
-  const url = `api.giphy.com/v1/gifs/search?q=${userInput}&api_key=rUL04f4RvzYBVhJdj5UbinsbiL0Bj2qd&limit=15`;
-  
-  fetch(url)
-    .then(res => {
-      console.log(res);
-      return response;
-    })
-    .then(response => {
-      const searchResults = JSON.stringify(response.items);
-      res.render("results.ejs");
-    });
 });
 
 // Listening to the server at port 8080
