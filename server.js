@@ -30,24 +30,23 @@ server.get("/", (req, res) => {
   });
 });
 
+// Navigates to a page where users can comment on blog entries
+server.get("/commentPage", (req, res) => res.status(200).render('comments'));
+
 // Navigates to a page where users can create blog entries
-server.get("/postPage", (req, res) => res.status(200).render("addpost"));
+server.get("/postPage", (req, res) => res.status(200).render('addpost'));
 
 //route for making an entry
 server.post("/addPost", (req, res) => {
   //passing data from input into the json file
   fs.readFile("./entries.json", "utf-8", (err, data) => {
     if (err) throw err;
-    // JSON string into JS object
     let listOfEntries = JSON.parse(data);
     // We're adding the user's entry to the list of entries
     listOfEntries.push(req.body);
     console.log(req.body);
     // Storing the entry in the json file
-    fs.writeFile(
-      "./entries.json",
-      JSON.stringify(listOfEntries),
-      "utf-8",
+    fs.writeFile("./entries.json", JSON.stringify(listOfEntries), "utf-8",
       err => {
         if (err) throw err;
         console.log("Done!");
@@ -57,7 +56,5 @@ server.post("/addPost", (req, res) => {
   //  Navigating back to the add-post page
   res.redirect("http://localhost:8080/postPage");
 });
-
-
 // Listening to the server at port 8080
 server.listen(8080, () => console.log("Listening to port 8080"));

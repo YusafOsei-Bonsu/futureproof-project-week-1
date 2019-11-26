@@ -16,8 +16,4 @@ function getData() {
       );
     }
   });
-
 }
-
-
-  
