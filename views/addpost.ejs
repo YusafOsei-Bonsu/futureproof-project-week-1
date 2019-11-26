@@ -1,74 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="css/addpost.css" />
-  </head>
-  <body>
-    <header class="header">
-      <h1 class="logo"><a href="#">TITLE/LOGO OF PROJECT</a></h1>
-      <ul class="main-nav">
-        <li> <form action="/" method="get"><button type="submit" value="Home">Home</button></form></li>
-        <li><a href="#">Add a post</a></li>
-      </ul>
-    </header>
-    <div class="flexContainer">
-            <h1>Add an entry</h1>
-            <form action="/addPost" method="post">
-              <div class="entryContainer">
-                    <input
-                    type="text"
-                    name="title"
-                    id="title"
-                    placeholder="Add a title"/><br>
-                  <input
-                  type="text"
-                  name="user"
-                  id=user
-                  placeholder="Add username"/><br>
 
-                <textarea
-                name="newEntry"
-                id="newentry"
-                placeholder="Add new entry"></textarea><br>
-                <br>
-                <input
-                type="text"
-                name="giphy"
-                id="giphy"
-                value="giphy"
-                placeholder="Add giphy"/><br>
-                <div class="giphycontainer"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Add an Entry | The Best Anonymous Journaling Website</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/addpost.css" />
+</head>
 
-                <input
-                type="button"
-                name="searchgiphy"
-                id="searchgiphy"
-                value="SearchGiphy"
-                onclick= "getData()"
-                />
-                <br>
+<body>
+  <header class="header">
+    <h1 class="logo"><a href="#">TITLE/LOGO OF PROJECT</a></h1>
+    <!-- Navigational bar -->
+    <ul class="main-nav">
+      <li>
+        <form action="/" method="get"><button type="submit" value="Home">Home</button></form>
+      </li>
+      <li><a href="#">Add a post</a></li>
+    </ul>
+  </header>
+  <div class="flexContainer">
+    <h1>Add an entry</h1>
+    <form action="/addPost" method="post">
+      <div class="entryContainer">
+        <!-- User enters their name here -->
+        <input type="text" name="title" id="title" placeholder="Add a title" />
+        <br>
+        <!-- User adds their username -->
+        <input type="text" name="user" id=user placeholder="Add username" />
+        <br>
+        <!-- User writes their blog entry here -->
+        <textarea name="newEntry" id="newentry" placeholder="Add new entry"></textarea>
+        <br>
+        <br>
+        <!-- User writes the gif they want -->
+        <input type="text" name="giphy" id="giphy" value="giphy" placeholder="Add giphy" />
+        <br>
+        <!-- The gif will be contained in here -->
+        <div class="giphycontainer"></div>
+        <!-- Pressing this button will retrieve a result from the Giphy API -->
+        <input type="button" name="searchgiphy" id="searchgiphy" value="SearchGiphy" onclick="getData()" />
+        <br>
+        <input type="submit" name="entrysubmit" id="entrysubmit" value="Submit">
+    </form>
+  </div>
 
-                <input
-                type="submit"
-                name="entrysubmit"
-                id="entrysubmit"
-                value="Submit">
-                </form>
-
-                </div>
-    </div>
-
-<script src="script/index.js"></script>
-  </body>
-  <footer>
-
-  </footer>
+  <script src="script/index.js"></script>
+</body>
+<footer></footer>
 </html>
