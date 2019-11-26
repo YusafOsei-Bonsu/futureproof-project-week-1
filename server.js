@@ -64,10 +64,8 @@ server.post("/addPost", (req, res) => {
   res.status(200).render("addpost");
 
   const userInput = req.body.giphy; // "keyword" is either the id or the name
-  const url =
-    "api.giphy.com/v1/gifs/search?q=" +
-    userInput +
-    "&api_key=rUL04f4RvzYBVhJdj5UbinsbiL0Bj2qd&limit=15";
+  const url = `api.giphy.com/v1/gifs/search?q=${userInput}&api_key=rUL04f4RvzYBVhJdj5UbinsbiL0Bj2qd&limit=15`;
+  
   fetch(url)
     .then(res => {
       console.log(res);
