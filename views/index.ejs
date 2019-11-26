@@ -30,7 +30,13 @@
       <%= JSON.stringify(entry.title).replace(/['"]+/g,'') %> <br>
       <%= JSON.stringify(entry.user).replace(/['"]+/g,'') %> <br>
       <%= JSON.stringify(entry.newEntry).replace(/['"]+/g,'') %> <br>
-      <div id="emojiBox"></div>
+      <div id="emojiBox">
+        <div><img src="assets/like.png" alt="Like"></div>
+        <div><img src="assets/dislike.png" alt="Dislike"></div>
+        <div><img src="assets/love.png" alt="Love Face"></div>
+        <div><img src="assets/happy.png" alt="Happy Face"></div>
+        <div><img src="assets/sad.png" alt="Sad Face"></div>
+      </div>
     </div>
     <% } %>
   </div>
