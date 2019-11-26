@@ -41,15 +41,11 @@ server.post("/addPost", (req, res) => {
   //passing data from input into the json file
   fs.readFile("./entries.json", "utf-8", (err, data) => {
     if (err) throw err;
-    // JSON string into JS object
     let listOfEntries = JSON.parse(data);
     // We're adding the user's entry to the list of entries
     listOfEntries.push(req.body);
     // Storing the entry in the json file
-    fs.writeFile(
-      "./entries.json",
-      JSON.stringify(listOfEntries),
-      "utf-8",
+    fs.writeFile("./entries.json", JSON.stringify(listOfEntries), "utf-8",
       err => {
         if (err) throw err;
         console.log("Done!");
