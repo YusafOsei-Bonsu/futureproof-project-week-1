@@ -20,12 +20,12 @@
     </div>
     <div class="flexContainer">
       <!-- Presents all blog entries -->
-      <% for (let i = 0; i < entries.length; i++) { %>
+      <% for (let entry of entries) { %>
         <div name="entry">
-          <%= JSON.stringify(entries[i].title).replace(/['"]+/g,'') %> <br>
-          <%= JSON.stringify(entries[i].user).replace(/['"]+/g,'') %> <br>
-          <%= JSON.stringify(entries[i].newEntry).replace(/['"]+/g,'') %>
-        </div>
+            <%= JSON.stringify(entry.title).replace(/['"]+/g,'') %> <br>
+            <%= JSON.stringify(entry.user).replace(/['"]+/g,'') %> <br>
+            <%= JSON.stringify(entry.newEntry).replace(/['"]+/g,'') %>
+          </div>
       <% } %>
     </div>
     <footer></footer>
