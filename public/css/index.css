@@ -92,3 +92,33 @@ a {
   border-radius: 10px;
   margin-top: 35%;
 }
+
+#likeEmoji:hover {
+  cursor: pointer;
+  width: 120%;
+  height: 120%;
+}
+
+#dislikeEmoji:hover {
+  cursor: pointer;
+  width: 120%;
+  height: 120%;
+}
+
+#loveEmoji:hover {
+  cursor: pointer;
+  width: 120%;
+  height: 120%;
+}
+
+#happyEmoji:hover {
+  cursor: pointer;
+  width: 120%;
+  height: 120%;
+}
+
+#sadEmoji:hover {
+  cursor: pointer;
+  width: 120%;
+  height: 120%;
+}
