@@ -4,15 +4,15 @@
   box-sizing: border-box;
 }
 
-* {
-  box-sizing: border-box;
-}
+* {box-sizing: border-box;}
+
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   margin: 0;
   min-height: 100vh;
 }
+
 ul {
   margin: 0;
   padding: 0;
@@ -21,8 +21,11 @@ ul {
 
 .flexContainer {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  height: 100vh;
+  text-align: center;
 }
 
 .flexContainer > div {
@@ -34,51 +37,25 @@ ul {
   font-size: 30px;
 }
 
-a {
-  text-decoration: none;
-  color: #34495e;
+nav {
+  position: absolute;
+  margin-bottom: 20px;
 }
 
-.logo {
-  margin: 0;
-  font-size: 14px;
-  display: flex;
+li.nav-item form button {
+  color: rgb(255, 255, 255, .4);
+  padding: 2px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin: 10px;
 }
 
-.main-nav {
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-evenly;
-}
+li.nav-item form button:hover {color: rgb(255, 255, 255, .8);}
 
-.logo a,
-.main-nav a {
-  padding: 10px 15px;
-  text-transform: uppercase;
-  text-align: center;
-  display: block;
-}
+h1 {font-size: 60px;}
 
-.main-nav a {
-  color: #34495e;
-  font-size: 0.99em;
-}
-
-.main-nav a:hover {
-  color: #718daa;
-}
-
-h1 {
-  font-size: 60px;
-}
-
-.flexContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-textarea,
-input[type="text"] {
+textarea, input[type="text"] {
   border-radius: 12px;
   border: gray 1px solid;
   box-shadow: 0 0 5px #999999;
@@ -86,12 +63,9 @@ input[type="text"] {
   width: 350px;
 }
 
-textarea {
-  height: 250px;
-}
+textarea {height: 250px;}
 
-input[type="button"],
-input[type="submit"] {
+.goldBtn {
   padding: 8px 15px;
   font-size: 14px;
   font-weight: bold;
@@ -99,16 +73,4 @@ input[type="submit"] {
   border: 0;
   border-radius: 10px;
   cursor: pointer;
-}
-
-input[type="button"]:hover,
-input[type="submit"]:hover {
-  color: white;
-  background: #4782ff;
-}
-.flexContainer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  height: 100vh;
 }
