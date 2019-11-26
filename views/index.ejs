@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Homepage | The Best Anonymous Journaling Website</title>
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-  </head>
-  <body>
-    <header class="header">
-      <h1 class="logo"><a href="#">TITLE/LOGO OF PROJECT</a></h1>
-      <ul class="main-nav">
-        <li><a href="#">Home</a></li>
-        <li><form action="/postPage" method="get"><button type="submit">Add a post</button></form></li>
-      </ul>
-    </header>
-    <div name="sectionOne">
-      <h1 id="pageTitle">Anonymous journal writing and sharing made easy.</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Homepage | The Best Anonymous Journaling Website</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="logo"><a href="#">TITLE/LOGO OF PROJECT</a></h1>
+    <ul class="main-nav">
+      <li><a href="#">Home</a></li>
+      <li>
+        <form action="/postPage" method="get"><button type="submit">Add a post</button></form>
+      </li>
+    </ul>
+  </header>
+  <div name="sectionOne">
+    <h1 id="pageTitle">Anonymous journal writing and sharing made easy.</h1>
+  </div>
+  <div class="flexContainer">
+    <!-- Presents all blog entries -->
+    <% for (let entry of entries) { %>
+    <div name="entry">
+      <%= JSON.stringify(entry.title).replace(/['"]+/g,'') %> <br>
+      <%= JSON.stringify(entry.user).replace(/['"]+/g,'') %> <br>
+      <%= JSON.stringify(entry.newEntry).replace(/['"]+/g,'') %> <br>
+      <div id="emojiBox">
+        <div><img id="likeEmoji" src="assets/like.png" alt="Like"></div>
+        <div><img id="dislikeEmoji" src="assets/dislike.png" alt="Dislike"></div>
+        <div><img id="loveEmoji" src="assets/love.png" alt="Love Face"></div>
+        <div><img id="happyEmoji" src="assets/happy.png" alt="Happy Face"></div>
+        <div><img id="sadEmoji" src="assets/sad.png" alt="Sad Face"></div>
+      </div>
     </div>
-    <div class="flexContainer">
-      <!-- Presents all blog entries -->
-      <% for (let entry of entries) { %>
-        <div name="entry">
-            <%= JSON.stringify(entry.title).replace(/['"]+/g,'') %> <br>
-            <%= JSON.stringify(entry.user).replace(/['"]+/g,'') %> <br>
-            <%= JSON.stringify(entry.newEntry).replace(/['"]+/g,'') %>
-          </div>
-      <% } %>
-    </div>
-    <footer></footer>
-  </body>
+    <% } %>
+  </div>
+  <footer></footer>
+  <script src="script/index.js"></script>
+</body>
+
 </html>

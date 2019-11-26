@@ -41,15 +41,11 @@ server.post("/addPost", (req, res) => {
   //passing data from input into the json file
   fs.readFile("./entries.json", "utf-8", (err, data) => {
     if (err) throw err;
-    // JSON string into JS object
     let listOfEntries = JSON.parse(data);
     // We're adding the user's entry to the list of entries
     listOfEntries.push(req.body);
     // Storing the entry in the json file
-    fs.writeFile(
-      "./entries.json",
-      JSON.stringify(listOfEntries),
-      "utf-8",
+    fs.writeFile("./entries.json", JSON.stringify(listOfEntries), "utf-8",
       err => {
         if (err) throw err;
         console.log("Done!");
@@ -64,10 +60,8 @@ server.post("/addPost", (req, res) => {
   res.status(200).render("addpost");
 
   const userInput = req.body.giphy; // "keyword" is either the id or the name
-  const url =
-    "api.giphy.com/v1/gifs/search?q=" +
-    userInput +
-    "&api_key=rUL04f4RvzYBVhJdj5UbinsbiL0Bj2qd&limit=15";
+  const url = `api.giphy.com/v1/gifs/search?q=${userInput}&api_key=rUL04f4RvzYBVhJdj5UbinsbiL0Bj2qd&limit=15`;
+  
   fetch(url)
     .then(res => {
       console.log(res);
