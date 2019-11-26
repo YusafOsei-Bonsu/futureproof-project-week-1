@@ -74,3 +74,8 @@ textarea {height: 250px;}
   border-radius: 10px;
   cursor: pointer;
 }
+
+.giphycontainer {
+  width: 350px;
+}
+

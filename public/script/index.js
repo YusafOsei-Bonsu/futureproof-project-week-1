@@ -1,3 +1,19 @@
-$(document).ready(() => {
-    
-});
+function getData() {
+  const input = $("#giphy").val();
+  console.log(input);
+
+  const xhr = $.get(
+    `http://api.giphy.com/v1/gifs/search?q=${input}&api_key=rUL04f4RvzYBVhJdj5UbinsbiL0Bj2qd&limit=10`
+  );
+  xhr.done(response => {
+    console.log("success got data", response);
+
+    let gifs = response.data;
+//we are now appending a radio ckeck box in order to select a giph to be submitted
+    for (i in gifs) {
+      $(".giphycontainer").append(
+        `<input type="radio" name="radio" value=${gifs[i].images.original.url}><img src='${gifs[i].images.original.url}' width = 100 % id=${i} /></input>`
+      );
+    }
+  });
+}

@@ -44,6 +44,7 @@ server.post("/addPost", (req, res) => {
     let listOfEntries = JSON.parse(data);
     // We're adding the user's entry to the list of entries
     listOfEntries.push(req.body);
+    console.log(req.body);
     // Storing the entry in the json file
     fs.writeFile("./entries.json", JSON.stringify(listOfEntries), "utf-8",
       err => {
@@ -55,6 +56,5 @@ server.post("/addPost", (req, res) => {
   //  Navigating back to the add-post page
   res.redirect("http://localhost:8080/postPage");
 });
-
 // Listening to the server at port 8080
 server.listen(8080, () => console.log("Listening to port 8080"));
