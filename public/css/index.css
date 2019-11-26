@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {box-sizing: border-box;}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flexContainer > div {
+  border-radius: 12px;
+  width: 350px;
+  height: 250px;
+  border: gray 1px solid;
+  box-shadow: 0 0 5px #999999;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #34495e;
+}
+
+.logo {
+  margin: 0;
+  font-size: 14px;
+  display: flex;
+}
+
+.main-nav {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logo a,
+.main-nav a {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+}
+
+.main-nav a {
+  color: #34495e;
+  font-size: 0.99em;
+}
+
+.main-nav a:hover {
+  color: #718daa;
+}
+
+.flexContainer {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+#pageTitle {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Quicksand', sans-serif;
+}
