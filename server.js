@@ -28,7 +28,6 @@ server.get("/", (req, res) => {
     let blogEntries = JSON.parse(data);
     res.status(200).render("index", { entries: blogEntries.entries });
     console.log(JSON.parse(data))
-
   });
 });
 
@@ -76,7 +75,13 @@ const generateID = () => {
   let ID = "";
 
   // Appends a single random character to ID
-  for (let i = 1; i <= 7; i++) ID += String.fromCharCode(Math.floor(Math.random() * (90 - 48 + 1)) + 48);
+  for (let i = 1; i <= 7; i++) {
+    if (String.fromCharCode(Math.floor(Math.random() * (90 - 48 + 1)) + 48) === "?") {
+      continue;
+    } else {
+      ID += String.fromCharCode(Math.floor(Math.random() * (90 - 48 + 1)) + 48);
+    }
+  };
 
   return ID;
 }
