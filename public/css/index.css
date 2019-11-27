@@ -42,37 +42,28 @@ ul {
   margin-bottom: 20px;
 }
 
-a {
-  text-decoration: none;
-  color: #34495e;
+nav {
+  position: absolute;
+  margin-bottom: 20px;
 }
 
-.logo {
-  margin: 0;
-  font-size: 14px;
-  display: flex;
+li.nav-item form button {
+  color: rgb(255, 255, 255, .4);
+  padding: 2px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin: 10px;
 }
 
-.main-nav {
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-evenly;
+li.nav-item form button:hover {
+  color: rgb(255, 255, 255, .8);
 }
 
-.logo a, .main-nav a {
-  padding: 10px 15px;
-  text-transform: uppercase;
+#pageTitle {
   text-align: center;
-  display: block;
-}
-
-.main-nav a {
-  color: #34495e;
-  font-size: 0.99em;
-}
-
-.main-nav a:hover {
-  color: #718daa;
+  margin-bottom: 20px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 #pageTitle {
