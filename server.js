@@ -32,21 +32,9 @@ server.get("/", (req, res) => {
   });
 });
 
-// Navigates to a page where users can comment on blog entries
-<<<<<<< Updated upstream
-server.get("/blogPage", (req, res) => {
-  res.status(200).render("blogpage")
-  });
-
-server.post("/blogpage", (req, res) => {
-  fs.readFile("./entries.json", "utf-8", (err, data) => {
-  let blogEntries = JSON.parse(data);
-  res.status(200).render("blogpage", { entries: blogEntries });
-});})
-=======
-
+// Navigates to comments page. we must read the json file and parse the data into an object, then we are able to define blogIds as an array of the ids in the json file. we can then implement the logic to verify that the url extension matches an id in the blogIds array
 server.get("/blogPage/:id", (req, res) => {
-  const id = req.params.id;
+  const id = req.params.id;  
   fs.readFile("./blog.json", "utf-8", (err, data) => {
     let blogs = JSON.parse(data);
     let blogIds = Object.keys(blogs.entries);
@@ -59,7 +47,6 @@ server.get("/blogPage/:id", (req, res) => {
   }
   )})
   
->>>>>>> Stashed changes
 
 // Navigates to a page where users can create blog entries
 server.get("/postPage", (req, res) => res.status(200).render("addpost"));
