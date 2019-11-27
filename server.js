@@ -24,9 +24,9 @@ server.use(bodyParser.urlencoded({ extended: true }));
 
 // By entering localhost:8080 in the address bar, we navigate to homepage
 server.get("/", (req, res) => {
-  fs.readFile("./entries.json", "utf-8", (err, data) => {
+  fs.readFile("./blog.json", "utf-8", (err, data) => {
     let blogEntries = JSON.parse(data);
-    res.status(200).render("index", { entries: blogEntries });
+    res.status(200).render("index", { entries: blogEntries.entries });
   });
 });
 
@@ -39,18 +39,14 @@ server.get("/postPage", (req, res) => res.status(200).render("addpost"));
 //route for making an entry
 server.post("/addPost", (req, res) => {
   //passing data from input into the json file
-  fs.readFile("./entries.json", "utf-8", (err, data) => {
+  fs.readFile("./blog.json", "utf-8", (err, data) => {
     if (err) throw err;
     let listOfEntries = JSON.parse(data);
     // We're adding the user's entry to the list of entries
-    listOfEntries.push(req.body);
-    console.log(req.body);
+    listOfEntries.entries[generateID()] = {title: req.body.title, author: req.body.user, entry: req.body.newEntry};
     // Storing the entry in the json file
-    fs.writeFile(
-      "./entries.json",
-      JSON.stringify(listOfEntries),
-      "utf-8",
-      err => {
+
+    fs.writeFile("./blog.json", JSON.stringify(listOfEntries), "utf-8", err => {
         if (err) throw err;
         console.log("Done!");
       }
@@ -59,5 +55,16 @@ server.post("/addPost", (req, res) => {
   //  Navigating back to the add-post page
   res.redirect("http://localhost:8080/postPage");
 });
+
+// Creates a 7-digit unique ID for blog entry
+const generateID = () => {
+  let ID = "";
+
+  // Appends a single random character to ID
+  for (let i = 1; i <= 7; i++) ID += String.fromCharCode(Math.floor(Math.random() * (90 - 48 + 1)) + 48);
+
+  return ID;
+}
+
 // Listening to the server at port 8080
 server.listen(8080, () => console.log("Listening to port 8080"));
