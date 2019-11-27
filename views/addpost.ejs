@@ -20,19 +20,9 @@
 </head>
 
 <body>
-  <!-- <header class="header">
-    <h1 class="logo"><a href="#">TITLE/LOGO OF PROJECT</a></h1> -->
-    <!-- Navigational bar -->
-    <!-- <ul class="main-nav">
-      <li>
-        <form action="/" method="get"><button type="submit" value="Home">Home</button></form>
-      </li>
-      <li><a href="#">Add a post</a></li>
-    </ul>
-  </header> -->
     <!-- Navigational bar -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a href="#" class="navbar-brand">TITLE/LOGO OF PROJECT</a>
+    <img id="logo" src="assets/logo.png" alt="Inblognito logo"><h5>InBlogNito</h5>
     <ul class="navbar-nav">
       <li class="nav-item">
         <form action="/" method="get"><button>Home</button></form>
@@ -46,12 +36,11 @@
   <div class="flexContainer">
     <h1>Add an entry</h1>
     <form action="/addPost" method="post">
-      <div class="entryContainer">
         <!-- User enters their name here -->
         <input type="text" name="title" id="title" placeholder="Add a title" />
         <br>
         <!-- User adds their username -->
-        <input type="text" name="user" id=user placeholder="Add username" />
+        <input type="text" name="user" id='user' placeholder="Add username" />
         <br>
         <!-- User writes their blog entry here -->
         <textarea name="newEntry" id="newentry" placeholder="Add new entry"></textarea>
