@@ -38,9 +38,9 @@
     <% for (const ID of Object.keys(entries)) { %>
     <div name="entry">
       <form action="/blogpage" method="POST">
-        <%= JSON.stringify(entry.title).replace(/['"]+/g,'') %> <br>
-        <%= JSON.stringify(entry.user).replace(/['"]+/g,'') %> <br>
-        <%= JSON.stringify(entry.newEntry).replace(/['"]+/g,'') %> <br>
+        <%= JSON.stringify(entries[ID].title).replace(/['"]+/g,'') %> <br>
+        <%= JSON.stringify(entries[ID].author).replace(/['"]+/g,'') %> <br>
+        <%= JSON.stringify(entries[ID].entry).replace(/['"]+/g,'') %> <br>
         <input type="button" name="blogEntry" value="read and comment">
       </form>
       <div id="emojiBox">
