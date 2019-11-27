@@ -11,12 +11,11 @@ $(document).ready(() => {
 
             let gifs = response.data;
             
-            // Display 10 gifs on the page
-            for (let gif of gifs) {
-                $(".giphycontainer").append(
-                    `<img src='${gif.images.original.url}' style= height: 100px'/>`
-                );
-            }
-        });
+          //we are now appending a radio ckeck box in order to select a giph to be submitted
+    for (i in gifs) {
+        $(".giphycontainer").append(
+          `<input type="radio" name="radio" value=${gifs[i].images.original.url}><img src='${gifs[i].images.original.url}' width = 100 % id=${i} /></input>`
+        );
+        };
     });
-});
+})});
