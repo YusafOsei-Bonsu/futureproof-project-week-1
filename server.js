@@ -60,9 +60,8 @@ server.post("/addPost", (req, res) => {
 const generateID = () => {
   let ID = "";
 
-  for (let i = 1; i <= 7; i++) {
-    ID += String.fromCharCode(Math.floor(Math.random() * (90 - 48 + 1)) + 48);
-  }
+  // Appends a single random character to ID
+  for (let i = 1; i <= 7; i++) ID += String.fromCharCode(Math.floor(Math.random() * (90 - 48 + 1)) + 48);
 
   return ID;
 }
