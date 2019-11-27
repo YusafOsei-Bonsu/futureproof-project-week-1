@@ -45,10 +45,9 @@
   </nav>
   <div class="flexContainer">
     <div class="BlogContainer">
-      <h1>Blog title</h1>
-
-
-
+        <%= JSON.stringify(entry.title).replace(/['"]+/g,'') %> <br>
+        <%= JSON.stringify(entry.user).replace(/['"]+/g,'') %> <br>
+        <%= JSON.stringify(entry.newEntry).replace(/['"]+/g,'') %> <br>
     </div>
 
 

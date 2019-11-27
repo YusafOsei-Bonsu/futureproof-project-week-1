@@ -31,7 +31,15 @@ server.get("/", (req, res) => {
 });
 
 // Navigates to a page where users can comment on blog entries
-server.get("/blogPage", (req, res) => res.status(200).render("blogpage"));
+server.get("/blogPage", (req, res) => {
+  res.status(200).render("blogpage")
+  });
+
+server.post("/blogpage", (req, res) => {
+  fs.readFile("./entries.json", "utf-8", (err, data) => {
+  let blogEntries = JSON.parse(data);
+  res.status(200).render("blogpage", { entries: blogEntries });
+});})
 
 // Navigates to a page where users can create blog entries
 server.get("/postPage", (req, res) => res.status(200).render("addpost"));
