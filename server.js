@@ -31,10 +31,10 @@ server.get("/", (req, res) => {
 });
 
 // Navigates to a page where users can comment on blog entries
-server.get("/commentPage", (req, res) => res.status(200).render('comments'));
+server.get("/blogPage", (req, res) => res.status(200).render("blogpage"));
 
 // Navigates to a page where users can create blog entries
-server.get("/postPage", (req, res) => res.status(200).render('addpost'));
+server.get("/postPage", (req, res) => res.status(200).render("addpost"));
 
 //route for making an entry
 server.post("/addPost", (req, res) => {
@@ -45,8 +45,8 @@ server.post("/addPost", (req, res) => {
     // We're adding the user's entry to the list of entries
     listOfEntries.entries[generateID()] = {title: req.body.title, author: req.body.user, entry: req.body.newEntry};
     // Storing the entry in the json file
-    fs.writeFile("./blog.json", JSON.stringify(listOfEntries), "utf-8",
-      err => {
+
+    fs.writeFile("./blog.json", JSON.stringify(listOfEntries), "utf-8", err => {
         if (err) throw err;
         console.log("Done!");
       }
