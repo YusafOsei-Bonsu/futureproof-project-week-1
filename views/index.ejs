@@ -35,19 +35,17 @@
   </div>
   <div class="flexContainer">
     <!-- Presents all blog entries -->
-    <% for (let entry of entries) { %>
+    <% for (const ID of Object.keys(entries)) { %>
     <div name="entry">
-      <%= JSON.stringify(entry.title).replace(/['"]+/g,'') %> <br>
-      <%= JSON.stringify(entry.user).replace(/['"]+/g,'') %> <br>
-      <%= JSON.stringify(entry.newEntry).replace(/['"]+/g,'') %> <br>
+      <%= JSON.stringify(entries[ID].title).replace(/['"]+/g,'') %> <br>
+      <%= JSON.stringify(entries[ID].author).replace(/['"]+/g,'') %> <br>
+      <%= JSON.stringify(entries[ID].entry).replace(/['"]+/g,'') %> <br>
       <div id="emojiBox">
         <div><img id="likeEmoji" src="assets/like.png" alt="Like"></div>
         <div><img id="dislikeEmoji" src="assets/dislike.png" alt="Dislike"></div>
         <div><img id="loveEmoji" src="assets/love.png" alt="Love Face"></div>
         <div><img id="happyEmoji" src="assets/happy.png" alt="Happy Face"></div>
         <div><img id="sadEmoji" src="assets/sad.png" alt="Sad Face"></div>
-        <!-- the thought process is to do this but its not working yet -->
-        <!-- <img src= <%= // JSON.stringify(entry.radio) %>  /> -->
       </div>
     </div>
     <% } %>
