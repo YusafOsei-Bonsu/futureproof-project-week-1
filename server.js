@@ -27,10 +27,13 @@ server.get("/", (req, res) => {
   fs.readFile("./blog.json", "utf-8", (err, data) => {
     let blogEntries = JSON.parse(data);
     res.status(200).render("index", { entries: blogEntries.entries });
+    console.log(JSON.parse(data))
+
   });
 });
 
 // Navigates to a page where users can comment on blog entries
+<<<<<<< Updated upstream
 server.get("/blogPage", (req, res) => {
   res.status(200).render("blogpage")
   });
@@ -40,6 +43,23 @@ server.post("/blogpage", (req, res) => {
   let blogEntries = JSON.parse(data);
   res.status(200).render("blogpage", { entries: blogEntries });
 });})
+=======
+
+server.get("/blogPage/:id", (req, res) => {
+  const id = req.params.id;
+  fs.readFile("./blog.json", "utf-8", (err, data) => {
+    let blogs = JSON.parse(data);
+    let blogIds = Object.keys(blogs.entries);
+    
+  if (blogIds.includes(id) === true) {
+    console.log("yeehaw");
+    res.status(200).render("blogpage")
+  } else {
+    res.status(404).send(`Blog ${id} not found`)}
+  }
+  )})
+  
+>>>>>>> Stashed changes
 
 // Navigates to a page where users can create blog entries
 server.get("/postPage", (req, res) => res.status(200).render("addpost"));

@@ -1,1 +1,19 @@
-{"entries":{":5?6VYH":{"title":"Hello world","author":"Captain Bonsu","entry":"Testing testing"},"CLXDIJ4":{"title":"Test 2","author":"Yo yo","entry":"adasda"},"9P0SAL8":{"title":"Final year project","author":"Hiiiii","entry":"adadada"},"1:473DR":{"title":"Test 4","author":"adada","entry":"asdadada"}}}
+{
+    "entries": {
+        ":5?6VYH": {
+            "title": "Hello world",
+            "author": "Captain Bonsu",
+            "entry": "Testing testing"
+        },
+        "9P0SAL8": {
+            "title": "Final year project",
+            "author": "Hiiiii",
+            "entry": "adadada"
+        },
+        "1:473DR": {
+            "title": "Test 4",
+            "author": "adada",
+            "entry": "asdadada"
+        }
+    }
+}
