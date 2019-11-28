@@ -41,9 +41,6 @@ server.get("/commentsPage", (req, res) => {
   fs.readFile("./blog.json", "utf-8", (err, data) => {
     let blogEntries = JSON.parse(data);
     let entryID = req.query.entryID;
-    console.log(entryID);
-    console.log(blogEntries.entries[entryID]);
-    console.log(blogEntries.entries.YWMPKLE.gif)
     res.status(200).render("comments", {
       entry: blogEntries.entries[entryID],
       id: entryID
@@ -59,11 +56,9 @@ server.post('/addComment', (req, res) => {
   //passing data from input into the json file
   fs.readFile("./blog.json", "utf-8", (err, data) => {
     if (err) throw err;
-    console.log(req.body);
     
     // The comment made by the user
     let comment = req.body["comment"];
-    
     let listOfEntries = JSON.parse(data);
 
     listOfEntries.entries[entryID].comments.push(comment);
@@ -146,38 +141,8 @@ server.post('/emoji', (req, res) => {
 
     // Storing the entry in the json file
     fs.writeFile("./blog.json", JSON.stringify(listOfEntries), "utf-8", err => {
-      if (err) throw err;
-      // The emoji selected by the user
-      let selectedEmoji = req.body["emoji"];
-      // ID of the blog post
-      let entryID = req.body["entryID"];
-      let listOfEntries = JSON.parse(data);
-
-      // We're adding the user's entry to the list of entries
-      switch (selectedEmoji) {
-        case "like":
-          listOfEntries.entries[entryID].reactions["like"] += 1; 
-          break;
-        case "dislike":
-          listOfEntries.entries[entryID].reactions["dislike"] += 1;
-          break;
-        case "love":
-          listOfEntries.entries[entryID].reactions["love"] += 1;
-          break;
-        case "happy":
-          listOfEntries.entries[entryID].reactions["happy"] += 1;
-          break;
-        case "sad":
-          listOfEntries.entries[entryID].reactions["sad"] += 1;
-          break;
-      }
-
-      // Storing the entry in the json file
-      fs.writeFile("./blog.json", JSON.stringify(listOfEntries), "utf-8", err => {
-          if (err) throw err;
+       if (err) throw err;
           console.log("Done!");
-        }
-      );
     });
   });
 
