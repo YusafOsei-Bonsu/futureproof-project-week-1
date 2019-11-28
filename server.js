@@ -113,7 +113,6 @@ server.post('/emoji', (req, res) => {
   //passing data from input into the json file
   fs.readFile("./blog.json", "utf-8", (err, data) => {
     if (err) throw err;
-    console.log(req.body);
     // The emoji selected by the user
     let selectedEmoji = req.body["emoji"];
     // ID of the blog post
