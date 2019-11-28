@@ -43,7 +43,7 @@ server.post("/addPost", (req, res) => {
     if (err) throw err;
     let listOfEntries = JSON.parse(data);
     // We're adding the user's entry to the list of entries
-    listOfEntries.entries[generateID()] = {title: req.body.title, author: req.body.user, entry: req.body.newEntry};
+    listOfEntries.entries[generateID()] = {title: req.body.title, author: req.body.user, entry: req.body.newEntry, reactions: {like: '0', dislike: '0', love: '0', happy: '0', sad: '0'}};
     // Storing the entry in the json file
 
     fs.writeFile("./blog.json", JSON.stringify(listOfEntries), "utf-8", err => {
@@ -56,12 +56,59 @@ server.post("/addPost", (req, res) => {
   res.redirect("http://localhost:8080/postPage");
 });
 
+// To change emoji reaction values in .json file
+server.post('/emoji', (req, res) => {
+    //passing data from input into the json file
+    fs.readFile("./blog.json", "utf-8", (err, data) => {
+      if (err) throw err;
+      console.log(req.body);
+      // The emoji selected by the user
+      let selectedEmoji = req.body["emoji"];
+      let listOfEntries = JSON.parse(data);
+
+      // We're adding the user's entry to the list of entries
+      switch (selectedEmoji) {
+        case "like":
+          listOfEntries.entries["2X>15O:R"].reactions["like"] += 1; 
+          break;
+        case "dislike":
+          listOfEntries.entries["2X>15O:R"].reactions["dislike"] += 1;
+          break;
+        case "love":
+          listOfEntries.entries["2X>15O:R"].reactions["love"] += 1;
+          break;
+        case "happy":
+          listOfEntries.entries["2X>15O:R"].reactions["happy"] += 1;
+          break;
+        case "sad":
+          listOfEntries.entries["2X>15O:R"].reactions["sad"] += 1;
+          break;
+      }
+
+      // Storing the entry in the json file
+      fs.writeFile("./blog.json", JSON.stringify(listOfEntries), "utf-8", err => {
+          if (err) throw err;
+          console.log("Done!");
+        }
+      );
+    });
+  
+  // Update emoji values on homepage
+  res.redirect('http://localhost:8080/');
+});
+
 // Creates a 7-digit unique ID for blog entry
 const generateID = () => {
   let ID = "";
 
   // Appends a single random character to ID
-  for (let i = 1; i <= 7; i++) ID += String.fromCharCode(Math.floor(Math.random() * (90 - 48 + 1)) + 48);
+  while (ID.length <= 7) {
+    if (String.fromCharCode(Math.floor(Math.random() * (90 - 48 + 1)) + 48) === "?") {
+      continue;
+    } else {
+      ID += String.fromCharCode(Math.floor(Math.random() * (90 - 48 + 1)) + 48);
+    }
+  }
 
   return ID;
 }
