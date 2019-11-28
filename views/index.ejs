@@ -31,11 +31,8 @@
     </ul>
   </nav>
 
-  <div name="sectionOne" class="jumbotron jumbotron-fluid" style="background-image: url(https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); background-size: cover;"><h1 id="pageTitle">Anonymous journal writing and sharing made easy.</h1></div>
+  <div name="sectionOne" class="jumbotron jumbotron-fluid" style="background-image: url(https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); background-size: cover;"><h1 id="pageTitle">Anonymous journal  writing <br>and sharing made easy.</h1></div>
 
-  <!-- <div name="sectionOne">
-    <h1 id="pageTitle">Anonymous journal writing and sharing made easy.</h1>
-  </div> -->
   <div class="flexContainer">
     <!-- Presents all blog entries -->
     <% for (const ID of Object.keys(entries)) { %>
@@ -54,11 +51,11 @@
       </form>
       <div id="emojiBox">
         <form method="post" action="/emoji">
-          <input id="likeBtn" type="radio" name="emoji" value="like"><img id="likeEmoji" src="assets/like.png" alt="Like">
-          <input id="dislikeBtn" type="radio" name="emoji" value="dislike"><img id="dislikeEmoji" src="assets/dislike.png" alt="Dislike">
-          <input id="loveBtn" type="radio" name="emoji" value="love"><img id="loveEmoji" src="assets/love.png" alt="Love">
-          <input id="happyBtn" type="radio" name="emoji" value="happy"><img id="happyEmoji" src="assets/happy.png" alt="Happy">
-          <input id="sadBtn" type="radio" name="emoji" value="sad"><img id="sadEmoji" src="assets/sad.png" alt="Sad">
+          <input id="likeBtn" type="radio" name="emoji" value="like"><label for="likeBtn"><img src="assets/like.png" alt="Like"></label>
+          <input id="dislikeBtn" type="radio" name="emoji" value="dislike"><label ><img src="assets/dislike.png" alt="Dislike"></label>
+          <input id="loveBtn" type="radio" name="emoji" value="love"><label><img src="assets/love.png" alt="Love"></label>
+          <input id="happyBtn" type="radio" name="emoji" value="happy"><label><img id="happyEmoji" src="assets/happy.png" alt="Happy"></label>
+          <input id="sadBtn" type="radio" name="emoji" value="sad"><label><img src="assets/sad.png" alt="Sad"></label>
           <input type="hidden" name="entryID" id="entryID" value="<%= `${ID}` %>"><br>
           <button type="submit" class="btn btn-primary">Submit Emoji</button>
         </form>
