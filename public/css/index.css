@@ -82,13 +82,6 @@ li.nav-item form button:hover {
   border-radius: 10px;
 }
 
-/* By hovering over the emojis, they increase in size by 20% (except logo) */
-img:not(#logo):hover {
-  cursor: pointer;
-  width: 120%;
-  height: 120%;
-}
-
 #reactions {
   text-align: left;
   margin-top: 5px;
@@ -105,24 +98,6 @@ li p {
   font-family: 'Raleway', sans-serif;
   margin: 0px;
   padding: 0px;
-}
-
-.input_hidden {
-  position: absolute;
-  left: -9999px;
-}
-
-.selected {
-  background: rgb(0,0,255);
-}
-
-#emojiBox label {
-  display: inline-block;
-  cursor: pointer;
-}
-
-#emojiBox label img {
-  padding: 3px;
 }
 
 /* Blue bootstrap button */
