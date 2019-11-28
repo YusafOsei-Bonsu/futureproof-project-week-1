@@ -100,7 +100,22 @@ li p {
   padding: 0px;
 }
 
-/* Blue bootstrap button */
+/* Blue bootstrap button (Submit Emoji) */
 button[type="submit"][class="btn btn-primary"] {
+  margin-top: 10px;
   margin-bottom: 5px;
+}
+
+/* black bootstrap button (Add a Comment) */
+button[type="submit"][class="btn btn-dark"] {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+input[type="radio"]:not(:first-child) {
+  margin-left: 5px;
+}
+
+#emojiBox img {
+  margin-right: 8px;
 }

@@ -63,13 +63,17 @@
       </div>
       <div id="reactions">
         <ul>
-          <li><p><%= `Like: ${JSON.stringify(entries[ID].reactions["like"]).replace(/['"]+/g,'')}` %></p></li>
-          <li><p><%= `Dislike: ${JSON.stringify(entries[ID].reactions["dislike"]).replace(/['"]+/g,'')}`%></p></li>
-          <li><p><%= `Love: ${JSON.stringify(entries[ID].reactions["love"]).replace(/['"]+/g,'')}` %></p></li>
-          <li><p><%= `Happy: ${JSON.stringify(entries[ID].reactions["happy"]).replace(/['"]+/g,'')}` %></p></li>
-          <li><p><%= `Sad: ${JSON.stringify(entries[ID].reactions["sad"]).replace(/['"]+/g,'')}` %></p></li>
+          <li><p><%= `Like: ${entries[ID].reactions["like"]}` %></p></li>
+          <li><p><%= `Dislike: ${entries[ID].reactions["dislike"]}`%></p></li>
+          <li><p><%= `Love: ${entries[ID].reactions["love"]}` %></p></li>
+          <li><p><%= `Happy: ${entries[ID].reactions["happy"]}` %></p></li>
+          <li><p><%= `Sad: ${entries[ID].reactions["sad"]}` %></p></li>
         </ul>
       </div>
+      <form action="/commentsPage" method="GET">
+        <input type="hidden" name="entryID" id="entryID" value="<%= `${ID}` %>"><br>
+        <button type="submit" class="btn btn-dark">Add a Comment</button>
+      </form>
     </div>
     <% } %>
     <!-- jQuery -->
