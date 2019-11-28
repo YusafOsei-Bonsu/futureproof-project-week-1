@@ -42,7 +42,6 @@ server.get("/blogPage/:id", (req, res) => {
     res.status(404).send(`Blog ${id} not found`)}
   }
   )})
-  
 
 // Navigates to a page where users can create blog entries
 server.get("/postPage", (req, res) => res.status(200).render("addpost"));
@@ -54,12 +53,10 @@ server.post("/addPost", (req, res) => {
     if (err) throw err;
     let listOfEntries = JSON.parse(data);
     // We're adding the user's entry to the list of entries
-    listOfEntries.entries[generateID()] = {title: req.body.title, author: req.body.user, entry: req.body.newEntry, reactions: {like: 0, dislike: 0, love: 0, happy: 0, sad: 0}};
+    listOfEntries.entries[generateID()] = {title: req.body.title, author: req.body.user, entry: req.body.newEntry, gif: req.body.radio, reactions: {like: 0, dislike: 0, love: 0, happy: 0, sad: 0}};
     // Storing the entry in the json file
-
     fs.writeFile("./blog.json", JSON.stringify(listOfEntries), "utf-8", err => {
         if (err) throw err;
-        console.log("Done!");
       }
     );
   });
@@ -72,7 +69,6 @@ server.post('/emoji', (req, res) => {
     //passing data from input into the json file
     fs.readFile("./blog.json", "utf-8", (err, data) => {
       if (err) throw err;
-      console.log(req.body);
       // The emoji selected by the user
       let selectedEmoji = req.body["emoji"];
       // ID of the blog post

@@ -26,7 +26,7 @@
         <form action="/" method="get"><button>Home</button></form>
       </li>
       <li class="nav-item">
-        <form><button style="color: rgb(255, 255, 255, .9);">Write a Post</button></form>
+        <form action="/postPage" method="get"><button type="submit" style="color: rgb(255, 255, 255, .9);">Write a Post</button></form>
       </li>
     </ul>
   </nav>
@@ -35,6 +35,7 @@
       <h1> <%= JSON.stringify(entries.title).replace(/['"]+/g,'') %> </h1>
        <h3> <%= JSON.stringify(entries.author).replace(/['"]+/g,'') %> </h3><br>
        <p> <%= JSON.stringify(entries.entry).replace(/['"]+/g,'') %> </p><br>
+       <img src=" <%= JSON.stringify(entries.gif).replace(/['"]+/g,'') %> " alt='a gif'>
     </div>
     <form action="/addComment" method="post">
       <div class="commentContainer">
