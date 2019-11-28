@@ -6,8 +6,6 @@
   box-sizing: border-box;
 }
 
-* {box-sizing: border-box;}
-
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
@@ -80,6 +78,7 @@ li.nav-item form button:hover {
   width: 100%;
   height: 15%;
   border-radius: 10px;
+  margin-top: 10px;
 }
 
 #reactions {
