@@ -31,6 +31,9 @@
   </nav>
   <div class="flexContainer">
     <div class="BlogContainer">
+      <h1> <%= JSON.stringify(entries.title).replace(/['"]+/g,'') %> </h1>
+       <h3> <%= JSON.stringify(entries.author).replace(/['"]+/g,'') %> </h3><br>
+       <p> <%= JSON.stringify(entries.entry).replace(/['"]+/g,'') %> </p><br>
     </div>
     <form action="/addComment" method="post">
       <div class="commentContainer">
