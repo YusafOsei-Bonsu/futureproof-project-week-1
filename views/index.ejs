@@ -41,14 +41,16 @@
     <% for (const ID of Object.keys(entries)) { %>
     <div name="entry">
       <form action="/blogpage" method="POST" id="textbox">
-        <a href=" <%= `/blogPage/${ID}` %> "><%= JSON.stringify(entries[ID].title).replace(/['"]+/g,'') %></a> <br>
+        <h1><%= entries[ID].title %></h1><br>
         <!-- if the user has provided their name, it appears. If not, "By anonymous blogger" is presented -->
-        <% if (JSON.stringify(entries[ID].author).replace(/['"]+/g,'')) { %>
-        <em><%= JSON.stringify(entries[ID].author).replace(/['"]+/g,''); %></em> <br>
+        <% if (entries[ID].author) { %>
+        <em><%= entries[ID].author; %></em> <br>
         <% } else { %>
         <em><%= `By anonymous blogger` %></em> <br>
-        <% } %>        
-        <%= JSON.stringify(entries[ID].entry).replace(/['"]+/g,'') %> <br>
+        <% } %>   <br>
+        <p><%= entries[ID].entry %></p>     
+        <% if ((entries[ID]).hasOwnProperty('gif')) { %> 
+          <img src=" <%= entries[ID].gif %> " alt='a gif'> <% } %>
       </form>
       <div id="emojiBox">
         <form method="post" action="/emoji">
@@ -64,13 +66,17 @@
       
       <div id="reactions">
         <ul>
-          <li><p><%= `Like: ${JSON.stringify(entries[ID].reactions["like"]).replace(/['"]+/g,'')}` %></p></li>
-          <li><p><%= `Dislike: ${JSON.stringify(entries[ID].reactions["dislike"]).replace(/['"]+/g,'')}`%></p></li>
-          <li><p><%= `Love: ${JSON.stringify(entries[ID].reactions["love"]).replace(/['"]+/g,'')}` %></p></li>
-          <li><p><%= `Happy: ${JSON.stringify(entries[ID].reactions["happy"]).replace(/['"]+/g,'')}` %></p></li>
-          <li><p><%= `Sad: ${JSON.stringify(entries[ID].reactions["sad"]).replace(/['"]+/g,'')}` %></p></li>
+          <li><p><%= `Like: ${entries[ID].reactions["like"]}` %></p></li>
+          <li><p><%= `Dislike: ${entries[ID].reactions["dislike"]}`%></p></li>
+          <li><p><%= `Love: ${entries[ID].reactions["love"]}` %></p></li>
+          <li><p><%= `Happy: ${entries[ID].reactions["happy"]}` %></p></li>
+          <li><p><%= `Sad: ${entries[ID].reactions["sad"]}` %></p></li>
         </ul>
       </div>
+      <form action="/commentsPage" method="GET">
+        <input type="hidden" name="entryID" id="entryID" value="<%= `${ID}` %>"><br>
+        <button type="submit" class="btn btn-dark">Add/Read Comments</button>
+      </form>
     </div>
     <% } %>
     <!-- jQuery -->
