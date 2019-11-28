@@ -1,14 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Quicksand|Raleway&display=swap");
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-* {
-  box-sizing: border-box;
-}
+* {box-sizing: border-box;}
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -18,7 +14,7 @@ body {
 }
 
 h5 {
-  color: rgb(255, 255, 255);
+  color: rgb(255,255,255);
   margin-top: 10px;
   margin-right: 10px;
 }
@@ -35,7 +31,7 @@ nav {
 }
 
 li.nav-item form button {
-  color: rgb(255, 255, 255, 0.4);
+  color: rgb(255, 255, 255, .4);
   padding: 2px;
   background-color: transparent;
   border: none;
@@ -43,9 +39,7 @@ li.nav-item form button {
   margin: 10px;
 }
 
-li.nav-item form button:hover {
-  color: rgb(255, 255, 255, 0.8);
-}
+li.nav-item form button:hover {color: rgb(255, 255, 255, .8);}
 
 .flexContainer {
   display: flex;
@@ -65,12 +59,9 @@ li.nav-item form button:hover {
   font-size: 30px;
 }
 
-h1 {
-  font-size: 60px;
-}
+h1 {font-size: 60px;}
 
-textarea,
-input[type="text"] {
+textarea, input[type="text"] {
   border-radius: 12px;
   border: gray 1px solid;
   box-shadow: 0 0 5px #999999;
@@ -79,9 +70,7 @@ input[type="text"] {
   margin-bottom: 10px;
 }
 
-textarea {
-  height: 250px;
-}
+textarea {height: 250px;}
 
 .goldBtn {
   padding: 8px 15px;
@@ -95,7 +84,7 @@ textarea {
 
 .goldBtn:hover {
   cursor: pointer;
-  background: rgba(255, 228, 161, 0.5);
+  background: rgba(255, 228, 161, .5);
 }
 
 .goldBtn:active {
@@ -105,11 +94,5 @@ textarea {
 
 .giphycontainer {
   width: 350px;
-  margin: 0 auto;
 }
 
-h1 {
-  font-family: "Raleway", sans-serif;
-  margin: 0px;
-  padding: 0px;
-}
