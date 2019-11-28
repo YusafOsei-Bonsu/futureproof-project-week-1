@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Raleway&display=swap');
 
 * {
   padding: 0;
@@ -38,10 +38,9 @@ ul {
 .flexContainer > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border-radius: 12px;
   width: 350px;
-  height: 250px;
+  height: fit-content;
   border: gray 1px solid;
   box-shadow: 0 0 5px #999999;
   padding: 15px 20px;
@@ -72,12 +71,6 @@ li.nav-item form button:hover {
   font-family: 'Quicksand', sans-serif;
 }
 
-#pageTitle {
-  text-align: center;
-  margin-bottom: 20px;
-  font-family: 'Quicksand', sans-serif;
-}
-
 #emojiBox {
   display: flex;
   flex-direction: row;
@@ -87,12 +80,27 @@ li.nav-item form button:hover {
   width: 100%;
   height: 15%;
   border-radius: 10px;
-  margin-top: 35%;
 }
 
-/* By hovering over the emojis, they increase in size by 20% (except logo) */
-img:not(#logo):hover {
-  cursor: pointer;
-  width: 120%;
-  height: 120%;
+#reactions {
+  text-align: left;
+  margin-top: 5px;
+  width: 100%;
+}
+
+li p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#entryTitle {
+  font-family: 'Raleway', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Blue bootstrap button */
+button[type="submit"][class="btn btn-primary"] {
+  margin-bottom: 5px;
 }

@@ -19,7 +19,8 @@
 <body>
   <!-- Navigational bar -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <img id="logo" src="assets/logo.png" alt="Inblognito logo"><h5>InBlogNito</h5>
+    <img id="logo" src="assets/logo.png" alt="Inblognito logo">
+    <h5>InBlogNito</h5>
     <ul class="navbar-nav">
       <li class="nav-item">
         <form><button style="color: rgb(255, 255, 255, .9);">Home</button></form>
@@ -39,25 +40,40 @@
     <div name="entry">
       <form action="/blogpage" method="POST">
         <a href=" <%= `/blogPage/${ID}` %> "><%= JSON.stringify(entries[ID].title).replace(/['"]+/g,'') %></a> <br>
-        <%= JSON.stringify(entries[ID].author).replace(/['"]+/g,'') %> <br>
+        <!-- if the user has provided their name, it appears. If not, "By anonymous blogger" is presented -->
+        <% if (JSON.stringify(entries[ID].author).replace(/['"]+/g,'')) { %>
+        <em><%= JSON.stringify(entries[ID].author).replace(/['"]+/g,''); %></em> <br>
+        <% } else { %>
+        <em><%= `By anonymous blogger` %></em> <br>
+        <% } %>        
         <%= JSON.stringify(entries[ID].entry).replace(/['"]+/g,'') %> <br>
         <input type="button" name="blogEntry" value="read and comment">
       </form>
       <div id="emojiBox">
-        <div><img id="likeEmoji" src="assets/like.png" alt="Like"></div>
-        <div><img id="dislikeEmoji" src="assets/dislike.png" alt="Dislike"></div>
-        <div><img id="loveEmoji" src="assets/love.png" alt="Love Face"></div>
-        <div><img id="happyEmoji" src="assets/happy.png" alt="Happy Face"></div>
-        <div><img id="sadEmoji" src="assets/sad.png" alt="Sad Face"></div>
+        <form method="post" action="/emoji">
+          <input id="likeBtn" type="radio" name="emoji" value="like"><img id="likeEmoji" src="assets/like.png" alt="Like">
+          <input id="dislikeBtn" type="radio" name="emoji" value="dislike"><img id="dislikeEmoji" src="assets/dislike.png" alt="Dislike">
+          <input id="loveBtn" type="radio" name="emoji" value="love"><img id="loveEmoji" src="assets/love.png" alt="Love">
+          <input id="happyBtn" type="radio" name="emoji" value="happy"><img id="happyEmoji" src="assets/happy.png" alt="Happy">
+          <input id="sadBtn" type="radio" name="emoji" value="sad"><img id="sadEmoji" src="assets/sad.png" alt="Sad">
+          <input type="hidden" name="entryID" id="entryID" value="<%= `${ID}` %>"><br>
+          <button type="submit" class="btn btn-primary">Submit Emoji</button>
+        </form>
+      </div>
+      <div id="reactions">
+        <ul>
+          <li><p><%= `Like: ${JSON.stringify(entries[ID].reactions["like"]).replace(/['"]+/g,'')}` %></p></li>
+          <li><p><%= `Dislike: ${JSON.stringify(entries[ID].reactions["dislike"]).replace(/['"]+/g,'')}`%></p></li>
+          <li><p><%= `Love: ${JSON.stringify(entries[ID].reactions["love"]).replace(/['"]+/g,'')}` %></p></li>
+          <li><p><%= `Happy: ${JSON.stringify(entries[ID].reactions["happy"]).replace(/['"]+/g,'')}` %></p></li>
+          <li><p><%= `Sad: ${JSON.stringify(entries[ID].reactions["sad"]).replace(/['"]+/g,'')}` %></p></li>
+        </ul>
       </div>
     </div>
     <% } %>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  <!-- JS -->
-  <script src="script/index.js"></script>
-    <footer></footer>
-     <!-- jQuery -->
-  
-  </body>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</body>
+
 </html>
