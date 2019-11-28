@@ -62,6 +62,7 @@ li.nav-item form button:hover {color: rgb(255, 255, 255, .8);}
 h1 {
   font-size: 60px;
   font-family: "Raleway", sans-serif;
+  margin-top: 50px;
 }
 
 textarea, input[type="text"] {
