@@ -39,7 +39,7 @@
     <% for (const ID of Object.keys(entries)) { %>
     <div name="entry">
       <form action="/blogpage" method="POST">
-        <a href=" <%= `/blogPage/${ID}` %> "><%= entries[ID].title %></a> <br>
+        <h1><%= entries[ID].title %></h1><br>
         <!-- if the user has provided their name, it appears. If not, "By anonymous blogger" is presented -->
         <% if (entries[ID].author) { %>
         <em><%= entries[ID].author; %></em> <br>
@@ -72,7 +72,7 @@
       </div>
       <form action="/commentsPage" method="GET">
         <input type="hidden" name="entryID" id="entryID" value="<%= `${ID}` %>"><br>
-        <button type="submit" class="btn btn-dark">Add a Comment</button>
+        <button type="submit" class="btn btn-dark">Add/Read Comments</button>
       </form>
     </div>
     <% } %>

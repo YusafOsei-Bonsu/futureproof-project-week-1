@@ -43,6 +43,7 @@ server.get("/commentsPage", (req, res) => {
     let entryID = req.query.entryID;
     console.log(entryID);
     console.log(blogEntries.entries[entryID]);
+    console.log(blogEntries.entries.YWMPKLE.gif)
     res.status(200).render("comments", {
       entry: blogEntries.entries[entryID],
       id: entryID
@@ -76,22 +77,6 @@ server.post('/addComment', (req, res) => {
   res.redirect(`http://localhost:8080/commentsPage?entryID=${entryID}`);
 });
 
-// Navigates to comments page. we must read the json file and parse the data into an object, then we are able to define blogIds as an array of the ids in the json file. we can then implement the logic to verify that the url extension matches an id in the blogIds array
-// server.get("/commentsPage/:id", (req, res) => {
-//   const id = req.params.id;  
-//   fs.readFile("./blog.json", "utf-8", (err, data) => {
-//     let blogs = JSON.parse(data);
-//     let blogIds = Object.keys(blogs.entries);
-
-//     if (blogIds.includes(id) === true) {
-//       // console.log("yeehaw");
-//       res.status(200).render("comments");
-//     } else {
-//       res.status(404).send(`Blog ${id} not found`)
-//     }
-//   });
-// });
-
 // Navigates to a page where users can create blog entries
 server.get("/postPage", (req, res) => res.status(200).render("addpost"));
 
@@ -107,6 +92,7 @@ server.post("/addPost", (req, res) => {
       title: req.body.title,
       author: req.body.user,
       entry: req.body.newEntry,
+      gif: req.body.radio,
       reactions: {
         like: 0,
         dislike: 0,
