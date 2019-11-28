@@ -48,38 +48,22 @@
       <%= JSON.stringify(entries[ID].entry).replace(/['"]+/g,'') %>
       <div id="emojiBox">
         <form method="post" action="/emoji">
-          <input id="likeBtn" type="radio" name="emoji" value="like">
-            <label for="likeBtn"><img id="likeEmoji" src="assets/like.png" alt="Like"></label>
-          <input id="dislikeBtn" type="radio" name="emoji" value="dislike">
-            <label for="dislikeBtn"><img id="dislikeEmoji" src="assets/dislike.png" alt="Dislike"></label>
-          <input id="loveBtn" type="radio" name="emoji" value="love">
-            <label for="loveBtn"><img id="loveEmoji" src="assets/love.png" alt="Love"></label>
-          <input id="happyBtn" type="radio" name="emoji" value="happy">
-            <label for="happyBtn"><img id="happyEmoji" src="assets/happy.png" alt="Happy"></label>
-          <input id="sadBtn" type="radio" name="emoji" value="sad">
-            <label for="sadBtn"><img id="sadEmoji" src="assets/sad.png" alt="Sad"></label>
-          <input type="hidden" name="entryID" id="entryID" value=""><br>
-          <!-- https://stackoverflow.com/questions/7764154/pass-a-javascript-variable-value-into-input-type-hidden-value -->
-          <button type="submit" class="btn btn-primary">Submit Emoji</button>
+          <input id="likeBtn" type="radio" name="emoji" value="like"><img id="likeEmoji" src="assets/like.png" alt="Like">
+          <input id="dislikeBtn" type="radio" name="emoji" value="dislike"><img id="dislikeEmoji" src="assets/dislike.png" alt="Dislike">
+          <input id="loveBtn" type="radio" name="emoji" value="love"><img id="loveEmoji" src="assets/love.png" alt="Love">
+          <input id="happyBtn" type="radio" name="emoji" value="happy"><img id="happyEmoji" src="assets/happy.png" alt="Happy">
+          <input id="sadBtn" type="radio" name="emoji" value="sad"><img id="sadEmoji" src="assets/sad.png" alt="Sad">
+          <input type="hidden" name="entryID" id="entryID" value="<%= `${ID}` %>"><br>
+          <button type="submit" class="btn btn-primary" onclick="myFunction()">Submit Emoji</button>
         </form>
       </div>
       <div id="reactions">
         <ul>
-          <li>
-            <p><%= `Like: ${JSON.stringify(entries[ID].reactions["like"]).replace(/['"]+/g,'')}` %></p>
-          </li>
-          <li>
-            <p><%= `Dislike: ${JSON.stringify(entries[ID].reactions["dislike"]).replace(/['"]+/g,'')}`%></p>
-          </li>
-          <li>
-            <p><%= `Love: ${JSON.stringify(entries[ID].reactions["love"]).replace(/['"]+/g,'')}` %></p>
-          </li>
-          <li>
-            <p><%= `Happy: ${JSON.stringify(entries[ID].reactions["happy"]).replace(/['"]+/g,'')}` %></p>
-          </li>
-          <li>
-            <p><%= `Sad: ${JSON.stringify(entries[ID].reactions["sad"]).replace(/['"]+/g,'')}` %></p>
-          </li>
+          <li><p><%= `Like: ${JSON.stringify(entries[ID].reactions["like"]).replace(/['"]+/g,'')}` %></p></li>
+          <li><p><%= `Dislike: ${JSON.stringify(entries[ID].reactions["dislike"]).replace(/['"]+/g,'')}`%></p></li>
+          <li><p><%= `Love: ${JSON.stringify(entries[ID].reactions["love"]).replace(/['"]+/g,'')}` %></p></li>
+          <li><p><%= `Happy: ${JSON.stringify(entries[ID].reactions["happy"]).replace(/['"]+/g,'')}` %></p></li>
+          <li><p><%= `Sad: ${JSON.stringify(entries[ID].reactions["sad"]).replace(/['"]+/g,'')}` %></p></li>
         </ul>
       </div>
     </div>
@@ -87,9 +71,6 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <!-- JS -->
-    <script src="script/index.js"></script>
-    <script src="script/emoji.js"></script>
 </body>
 
 </html>
