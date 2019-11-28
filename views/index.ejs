@@ -42,13 +42,13 @@
         <h1><%= entries[ID].title %></h1><br>
         <!-- if the user has provided their name, it appears. If not, "By anonymous blogger" is presented -->
         <% if (entries[ID].author) { %>
-        <em><%= entries[ID].author; %></em> <br>
+        <em><%= `By ${entries[ID].author}` %></em> <br>
         <% } else { %>
         <em><%= `By anonymous blogger` %></em> <br>
         <% } %>   <br>
         <p><%= entries[ID].entry %></p>     
         <% if ((entries[ID]).hasOwnProperty('gif')) { %> 
-          <img src=" <%= entries[ID].gif %> " alt='a gif'> <% } %>
+          <img src=" <%= entries[ID].gif %> " alt='a gif' width="200px" height="200px"> <% } %>
       </form>
       <div id="emojiBox">
         <form method="post" action="/emoji">
