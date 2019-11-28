@@ -47,7 +47,6 @@
         <em><%= `By anonymous blogger` %></em> <br>
         <% } %>        
         <%= JSON.stringify(entries[ID].entry).replace(/['"]+/g,'') %> <br>
-        <input type="button" name="blogEntry" value="read and comment">
       </form>
       <div id="emojiBox">
         <form method="post" action="/emoji">
