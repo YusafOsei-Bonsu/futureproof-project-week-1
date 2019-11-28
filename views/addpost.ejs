@@ -34,8 +34,9 @@
     </ul>
   </nav>
   <div class="flexContainer">
-    <h1>Add an entry</h1>
+    
     <form action="/addPost" method="post">
+        <h1>Add an entry</h1>
         <!-- User enters their name here -->
         <input type="text" name="title" id="title" placeholder="Enter blog title here..." />
         <br>
@@ -47,12 +48,12 @@
         <br>
         <br>
         <!-- User writes the gif they want -->
-        <input type="text" name="giphy" id="giphy" value="giphy" placeholder="Add giphy" />
+        <input type="text" name="giphy" id="giphy" placeholder="Add giphy" />
         <br>
-        <!-- The gif will be contained in here -->
-        <div class="giphycontainer"></div>
         <!-- Pressing this button will retrieve a result from the Giphy API -->
         <input type="button" name="searchgiphy" id="searchgiphy" value="SearchGiphy" class="goldBtn"/>
+        <!-- The gif will be contained in here -->
+        <div class="giphycontainer"></div>
         <br>
         <input type="submit" name="entrysubmit" id="entrysubmit" value="Submit" class="goldBtn">
     </form>
