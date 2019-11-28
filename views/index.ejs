@@ -39,14 +39,16 @@
     <% for (const ID of Object.keys(entries)) { %>
     <div name="entry">
       <form action="/blogpage" method="POST">
-        <a href=" <%= `/blogPage/${ID}` %> "><%= JSON.stringify(entries[ID].title).replace(/['"]+/g,'') %></a> <br>
+        <a href=" <%= `/blogPage/${ID}` %> "><%= entries[ID].title %></a> <br>
         <!-- if the user has provided their name, it appears. If not, "By anonymous blogger" is presented -->
-        <% if (JSON.stringify(entries[ID].author).replace(/['"]+/g,'')) { %>
-        <em><%= JSON.stringify(entries[ID].author).replace(/['"]+/g,''); %></em> <br>
+        <% if (entries[ID].author) { %>
+        <em><%= entries[ID].author; %></em> <br>
         <% } else { %>
         <em><%= `By anonymous blogger` %></em> <br>
-        <% } %>        
-        <%= JSON.stringify(entries[ID].entry).replace(/['"]+/g,'') %> <br>
+        <% } %>   <br>
+        <p><%= entries[ID].entry %></p>     
+        <% if ((entries[ID]).hasOwnProperty('gif')) { %> 
+          <img src=" <%= entries[ID].gif %> " alt='a gif'> <% } %>
       </form>
       <div id="emojiBox">
         <form method="post" action="/emoji">
