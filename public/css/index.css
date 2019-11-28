@@ -64,6 +64,8 @@ li.nav-item form button:hover {
 }
 
 #pageTitle {
+  margin: auto;
+  color: rgb(255, 255, 255);
   text-align: center;
   margin-bottom: 20px;
   font-family: 'Quicksand', sans-serif;
@@ -79,12 +81,14 @@ li.nav-item form button:hover {
   height: 15%;
   border-radius: 10px;
   margin-top: 10px;
+  padding-top: 5px;
+  padding-right: 27px;
 }
 
 #reactions {
-  text-align: left;
   margin-top: 5px;
   width: 100%;
+  margin: auto;
 }
 
 li p {
@@ -93,28 +97,35 @@ li p {
   list-style: none;
 }
 
-#entryTitle {
-  font-family: 'Raleway', sans-serif;
-  margin: 0px;
-  padding: 0px;
-}
-
 /* Blue bootstrap button (Submit Emoji) */
 button[type="submit"][class="btn btn-primary"] {
   margin-top: 10px;
   margin-bottom: 5px;
+  margin-left: 15px;
 }
 
-/* black bootstrap button (Add a Comment) */
+/* black bootstrap button */
 button[type="submit"][class="btn btn-dark"] {
-  margin-top: 0px;
   margin-bottom: 5px;
 }
 
-input[type="radio"]:not(:first-child) {
-  margin-left: 5px;
+/* Selected emoji gets contained in a box */
+[type="radio"]:checked + label {
+  outline: 2px solid rgb(30,144,255);
 }
 
-#emojiBox img {
-  margin-right: 8px;
+/* Radio buttons are invisble */
+#emojiBox input[type="radio"] {
+  margin-left: 10px;
 }
+
+/* Emoji increases by 20% between being pressed and released */
+/* #emojiBox img:active {
+  height: 125%;
+  width: 125%;
+} */
+
+/* #emojiBox label {
+  display: inline-block;
+  cursor: pointer;
+} */

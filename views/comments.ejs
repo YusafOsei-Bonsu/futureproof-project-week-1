@@ -36,9 +36,9 @@
 
   <main class="flex-container">
     <div><h1><%= entry.title %></h1></div>
-    <div><h3><%= `By ${entry.author}` %></h3></div>
-    <div><p><em><%= `${entry.entry}` %></em></p></div>
-    <div><img src=" <%= entry.gif %> " alt="Gif"  width="200px" height="200px"></div>
+    <div><h3><em><%= `By ${entry.author}` %></em></h3></div>
+    <div><p><%= `${entry.entry}` %></p></div>
+    <div><img src=" <%= entry.gif %> " alt="Gif"  width="400px" height="400px"></div>
     <form action="/addComment" method="post" class="flex-container">
       <input type="text" name="comment" id="comment" placeholder="Write your comment here..">
       <input type="hidden" name="entryID" value="<%= `${id}`%>">
