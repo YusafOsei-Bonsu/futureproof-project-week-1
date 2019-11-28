@@ -27,7 +27,6 @@ server.get("/", (req, res) => {
   fs.readFile("./blog.json", "utf-8", (err, data) => {
     let blogEntries = JSON.parse(data);
     res.status(200).render("index", { entries: blogEntries.entries });
-    console.log(JSON.parse(data))
   });
 });
 
@@ -37,10 +36,8 @@ server.get("/blogPage/:id", (req, res) => {
   fs.readFile("./blog.json", "utf-8", (err, data) => {
     let blogs = JSON.parse(data);
     let blogIds = Object.keys(blogs.entries);
-    
   if (blogIds.includes(id) === true) {
-    console.log("yeehaw");
-    res.status(200).render("blogpage")
+    res.status(200).render("blogpage", { entries: blogs.entries[id]});
   } else {
     res.status(404).send(`Blog ${id} not found`)}
   }
