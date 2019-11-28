@@ -3,7 +3,7 @@
 [Harry Pendered-Mazer](https://github.com/harry-pm)  
 [Elizabeth Luong](https://github.com/elizabethluong/)
 [Yusaf Osei-Bonsu](https://github.com/YusafOsei-Bonsu)
-[Darnell Thomas]
+[Darnell Thomas](https://github.com/Darnell23)
 
 ## Contents
 
@@ -19,12 +19,13 @@ Create a community website where users can visit the website and anonymously pos
 
 ## User Stories
 
-As a user, I'd like to be able to post a journal entry annonymously
-As a user, I'd like to be able to add a gif to my journal entry.
-As a user, I'd like to see other users' posts
-As a user, I'd like to be able to react to other users' posts with an emoji.
-As a user, I'd like to be able to comment on other users' posts
-As a user, I'd like to see a word countdown for my journal entry.
+- As a user, I'd like to see other user's entries on a homepage.
+- As a user, I'd like to be able to navigate to a page to post a journal entry annonymously.
+- As a user, I'd like to see my entry added to the homepage along with other user's entries.
+- As a user, I'd like to click on any entry on the homepage and navigate to another page to view and comment on that entry.
+- As a user, I'd like to be able to add a gif to my journal entry.
+- As a user, I'd like to be able to react to other users' posts with an emoji.
+- As a user, I'd like to see a word countdown for my journal entry.
 
 ## Methodologies and Processes
 
@@ -32,9 +33,8 @@ As a user, I'd like to see a word countdown for my journal entry.
 - Each team member:
   - Go through what was achieved the day before.
   - What they're looking to achieve in the day ahead.
-  - if thy're any blockers.
-- Pair programming with 45 minute + 5 minute breaks.
-  VS Code
+  - if there's any blockers.
+- Pair programming with 45 minute + 5 minute breaks using VS Code.
 
 ### Technologies
 
@@ -51,3 +51,5 @@ As a user, I'd like to see a word countdown for my journal entry.
 ## Reviewing the Process
 
 ## Reflections on the Project
+
+We ran into some issues
