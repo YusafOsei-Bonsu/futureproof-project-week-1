@@ -4,6 +4,7 @@ const cors = require("cors");
 const path = require("path");
 const http = require("http");
 const fs = require("fs");
+let port = process.env.PORT || 8080;
 
 // Making an express application
 const server = express();
@@ -68,8 +69,9 @@ server.post('/addComment', (req, res) => {
       if (err) throw err;
     });
   });
-
-  res.redirect(`http://localhost:8080/commentsPage?entryID=${entryID}`);
+  
+  // Refreshes to see new comments
+  res.redirect(`/commentsPage?entryID=${entryID}`); 
 });
 
 // Navigates to a page where users can create blog entries
@@ -105,7 +107,7 @@ server.post("/addPost", (req, res) => {
     });
   });
   //  Navigating back to the add-post page
-  res.redirect("http://localhost:8080/postPage");
+  res.redirect("/postPage");
 });
 
 // To change emoji reaction values in .json file
@@ -146,7 +148,7 @@ server.post('/emoji', (req, res) => {
   });
 
   // Update emoji values on homepage
-  res.redirect('http://localhost:8080/');
+  res.redirect('/');
 });
 
 // Creates a 7-digit unique ID for blog entry
@@ -160,4 +162,4 @@ const generateID = () => {
 }
 
 // Listening to the server at port 8080
-server.listen(8080, () => console.log("Listening to port 8080"));
+server.listen(port, () => console.log("Listening to port 8080"));
