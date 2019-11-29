@@ -39,13 +39,16 @@
     <div name="entry">
       <form action="/blogpage" method="POST">
         <h1><%= entries[ID].title %></h1><br>
-        <!-- if the user has provided their name, it appears. If not, "By anonymous blogger" is presented -->
+        <!-- if the user has provided their name... -->
         <% if (entries[ID].author) { %>
+          <!-- it appears. -->
         <em><%= `By ${entries[ID].author}` %></em> <br>
         <% } else { %>
+          <!-- "By anonymous blogger" is presented -->
         <em><%= `By anonymous blogger` %></em> <br>
-        <% } %>   <br>
-        <p><%= entries[ID].entry %></p>     
+        <% } %>
+        <br>
+        <p><%= `"${entries[ID].entry}"` %></p>     
         <% if ((entries[ID]).hasOwnProperty('gif')) { %> 
         <img src=" <%= entries[ID].gif %> " alt='a gif' width="200px" height="200px"> <% } %>
       </form>
