@@ -25,6 +25,10 @@ ul {
   list-style: none;
 }
 
+#logo {
+  margin-right: 5px;
+}
+
 nav {
   position: absolute;
   margin-bottom: 20px;
