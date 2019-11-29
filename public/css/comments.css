@@ -53,6 +53,14 @@ main form.flex-container {
   width: 20%;
 }
 
+.center {
+  margin: auto;
+}
+
+form > h3 {
+  margin-top: 20px;
+}
+
 main > div {
   margin: auto;
 }
@@ -63,13 +71,13 @@ h5 {
   margin-right: 10px;
 }
 
+#logo {
+  margin-right: 5px;
+}
+
 form button[type="submit"][class="btn btn-primary"] {
   margin-top: 10px;
   margin-bottom: 25px;
-}
-
-form input[type="text"][name="comment"] {
-  margin-top: 10px;
 }
 
 #commentList {
