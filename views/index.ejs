@@ -47,27 +47,30 @@
         <% } %>   <br>
         <p><%= entries[ID].entry %></p>     
         <% if ((entries[ID]).hasOwnProperty('gif')) { %> 
-          <img src=" <%= entries[ID].gif %> " alt='a gif' width="200px" height="200px"> <% } %>
+        <img src=" <%= entries[ID].gif %> " alt='a gif' width="200px" height="200px"> <% } %>
       </form>
       <div id="emojiBox">
-        <form method="post" action="/emoji">
-          <input id="likeBtn" type="radio" name="emoji" value="like"><label for="likeBtn"><img src="assets/like.png" alt="Like"></label>
-          <input id="dislikeBtn" type="radio" name="emoji" value="dislike"><label ><img src="assets/dislike.png" alt="Dislike"></label>
-          <input id="loveBtn" type="radio" name="emoji" value="love"><label><img src="assets/love.png" alt="Love"></label>
-          <input id="happyBtn" type="radio" name="emoji" value="happy"><label><img id="happyEmoji" src="assets/happy.png" alt="Happy"></label>
-          <input id="sadBtn" type="radio" name="emoji" value="sad"><label><img src="assets/sad.png" alt="Sad"></label>
-          <input type="hidden" name="entryID" id="entryID" value="<%= `${ID}` %>"><br>
+        <form id="emojiForm" method="post" action="/emoji">
+          <div id="emojis">
+            <input id="likeBtn" type="radio" name="emoji" value="like">
+            <label for="likeBtn"><img src="assets/like.png" alt="Like"></label>
+            <p><%= entries[ID].reactions["like"] %></p>
+            <input id="dislikeBtn" type="radio" name="emoji" value="dislike">
+            <label ><img src="assets/dislike.png" alt="Dislike"></label>
+            <p><%= entries[ID].reactions["dislike"] %></p>
+            <input id="loveBtn" type="radio" name="emoji" value="love">
+            <label><img src="assets/love.png" alt="Love"></label>
+            <p><%= entries[ID].reactions["love"] %></p>
+            <input id="happyBtn" type="radio" name="emoji" value="happy">
+            <label><img id="happyEmoji" src="assets/happy.png" alt="Happy"></label>
+            <p><%= entries[ID].reactions["happy"] %></p>
+            <input id="sadBtn" type="radio" name="emoji" value="sad">
+            <label><img src="assets/sad.png" alt="Sad"></label>
+            <p><%= entries[ID].reactions["sad"] %></p>
+            <input type="hidden" name="entryID" id="entryID" value="<%= `${ID}` %>"><br>
+          </div> 
           <button type="submit" class="btn btn-primary">Submit Emoji</button>
-        </form>
-      </div>
-      <div id="reactions">
-        <ul>
-          <li><p><%= `Like: ${entries[ID].reactions["like"]}` %></p></li>
-          <li><p><%= `Dislike: ${entries[ID].reactions["dislike"]}`%></p></li>
-          <li><p><%= `Love: ${entries[ID].reactions["love"]}` %></p></li>
-          <li><p><%= `Happy: ${entries[ID].reactions["happy"]}` %></p></li>
-          <li><p><%= `Sad: ${entries[ID].reactions["sad"]}` %></p></li>
-        </ul>
+        </form> 
       </div>
       <form action="/commentsPage" method="GET">
         <input type="hidden" name="entryID" id="entryID" value="<%= `${ID}` %>"><br>
