@@ -161,5 +161,5 @@ const generateID = () => {
   return ID;
 }
 
-// Listening to the server at port 8080
-server.listen(port, () => console.log("Listening to port 8080"));
+// Listening to the server at an arbitrary port
+server.listen(port, () => console.log(`Listening to port ${port}`));
