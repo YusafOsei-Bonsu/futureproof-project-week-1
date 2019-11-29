@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
@@ -44,13 +40,20 @@ li.nav-item form button:hover {
 .flex-container {
   display: flex;
   flex-direction: column;
-  /* border: 2px solid rgb(82, 75, 75); */
   border-radius: 2px;
 }
 
 main form.flex-container {
   margin: auto;
   width: 20%;
+}
+
+.center {
+  margin: auto;
+}
+
+form h3[class="center"] {
+  margin-top: 30px;
 }
 
 main > div {
@@ -63,20 +66,20 @@ h5 {
   margin-right: 10px;
 }
 
+#logo {
+  margin-right: 5px;
+}
+
 form button[type="submit"][class="btn btn-primary"] {
   margin-top: 10px;
   margin-bottom: 25px;
-}
-
-form input[type="text"][name="comment"] {
-  margin-top: 10px;
 }
 
 #commentList {
   display: flex;
   flex-direction: column;
   border-radius: 2px;
-  width: 400px;
+  width: 500px;
   height: fit-content;
   border: gray 1px solid;
   box-shadow: 0 0 5px #999999;
