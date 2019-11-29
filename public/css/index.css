@@ -89,6 +89,20 @@ li.nav-item form button:hover {
   padding-right: 27px;
 }
 
+#emojiForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#emojis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
 #reactions {
   margin-top: 5px;
   width: 100%;
@@ -103,9 +117,10 @@ li p {
 
 /* Blue bootstrap button (Submit Emoji) */
 button[type="submit"][class="btn btn-primary"] {
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 5px;
   margin-left: 15px;
+  padding: 0px;
 }
 
 /* black bootstrap button */
@@ -122,14 +137,3 @@ button[type="submit"][class="btn btn-dark"] {
   margin-left: 10px;
   cursor: pointer;
 }
-
-/* Emoji increases by 20% between being pressed and released */
-/* #emojiBox img:active {
-  height: 125%;
-  width: 125%;
-} */
-
-/* #emojiBox label {
-  display: inline-block;
-  cursor: pointer;
-} */
