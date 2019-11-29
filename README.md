@@ -50,6 +50,16 @@ Create a community website where users can visit the website and anonymously pos
 
 ## Reviewing the Process
 
+We tried to use an agile methodology and did brief 'stand-ups' at the start of each day.
+After some issues with git and github, we refined the user stories and made sure each pair was working on different features/files.
+
 ## Reflections on the Project
 
-We ran into some issues
+We started off with getting the server, folders and the markup up quickly but ran into some problems reading and writing into our JSON file.
+
+We also had some issues making the API call to Giphy but once we found an example of how to add the parameters, we made a successfull call and logged the results to the console and passed the images using Jquery to a div.
+
+Once we got the hang of reading writing in our JSON files and access the objects it didn't take too long to implement the remaining functionalites.
+
+On reflection we should have finished the minimum viable product before dealing with the gifs and emojis.
+We could have been more specific in our user stories at the beginning.
