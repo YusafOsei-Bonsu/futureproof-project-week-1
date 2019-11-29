@@ -46,19 +46,19 @@
       <button class="btn btn-primary" type="submit">Submit Comment</button>
     </form>
     <h3 class="center">Comments</h3>
-    <!-- If the entry has no comments... -->
-    <% if (entry.comments.length == 0 || entry.comments.length === undefined) { %>
-      <!-- An empty div will appear -->
-      <div id="commentList"></div>
-    <% } else { %>
-      <!-- Otherwise, display the comment(s) -->
-      <div id="commentList">
-        <% for (let comment of entry.comments) { %>
-          <%= comment %>
-          <hr>
-        <% } %>
-      </div>
-    <% } %>
+    <div id="commentList">
+      <!-- If the entry has no comments... -->
+      <% if (entry.comments.length == 0 || entry.comments.length === undefined) { %>
+        <!-- An empty div will appear -->
+        <p>No comments have been made..</p>
+      <% } else { %>
+        <!-- Otherwise, display the comment(s) -->
+          <% for (let comment of entry.comments) { %>
+            <hr>
+            <%= comment %>
+          <% } %> 
+      <% } %>
+    </div>
   </main>
 </body>
 </html>
