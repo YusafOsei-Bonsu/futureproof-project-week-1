@@ -62,4 +62,6 @@ We also had some issues making the API call to Giphy but once we found an exampl
 Once we got the hang of reading writing in our JSON files and access the objects it didn't take too long to implement the remaining functionalites.
 
 On reflection we should have finished the minimum viable product before dealing with the gifs and emojis.
-We could have been more specific in our user stories at the beginning.
+We could have been more specific in our user stories at the beginning. In addition, we could've performed
+vigorous testing on the web application after completion. For example, nearer to the end, we discovered that
+the emoji values were disfiguring the homepage's appearence; therefore, in order to resolve this, we could have altered the margin/padding spacing of the emojis.
