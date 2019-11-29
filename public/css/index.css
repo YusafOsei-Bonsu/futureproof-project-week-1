@@ -45,6 +45,10 @@ ul {
   margin-bottom: 20px;
 }
 
+#logo {
+  margin-right: 5px;
+}
+
 nav {
   position: absolute;
   margin-bottom: 20px;
@@ -114,9 +118,9 @@ button[type="submit"][class="btn btn-dark"] {
   outline: 2px solid rgb(30,144,255);
 }
 
-/* Radio buttons are invisble */
 #emojiBox input[type="radio"] {
   margin-left: 10px;
+  cursor: pointer;
 }
 
 /* Emoji increases by 20% between being pressed and released */
