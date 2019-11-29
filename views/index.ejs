@@ -55,21 +55,26 @@
       <div id="emojiBox">
         <form id="emojiForm" method="post" action="/emoji">
           <div id="emojis">
+            <!-- Like emoji -->
             <input id="likeBtn" type="radio" name="emoji" value="like">
-            <label for="likeBtn"><img src="assets/like.png" alt="Like"></label>
-            <p><%= entries[ID].reactions["like"] %></p>
+              <label for="likeBtn"><img src="assets/like.png" alt="Like"></label>
+                <p><%= entries[ID].reactions["like"] %></p>
+            <!-- Dislike emoji -->
             <input id="dislikeBtn" type="radio" name="emoji" value="dislike">
-            <label ><img src="assets/dislike.png" alt="Dislike"></label>
-            <p><%= entries[ID].reactions["dislike"] %></p>
+              <label ><img src="assets/dislike.png" alt="Dislike"></label>
+                <p><%= entries[ID].reactions["dislike"] %></p>
+            <!-- Love emoji -->
             <input id="loveBtn" type="radio" name="emoji" value="love">
-            <label><img src="assets/love.png" alt="Love"></label>
-            <p><%= entries[ID].reactions["love"] %></p>
+              <label><img src="assets/love.png" alt="Love"></label>
+                <p><%= entries[ID].reactions["love"] %></p>
+            <!-- Happy emoji -->
             <input id="happyBtn" type="radio" name="emoji" value="happy">
-            <label><img id="happyEmoji" src="assets/happy.png" alt="Happy"></label>
-            <p><%= entries[ID].reactions["happy"] %></p>
+              <label><img id="happyEmoji" src="assets/happy.png" alt="Happy"></label>
+                <p><%= entries[ID].reactions["happy"] %></p>
+            <!-- Sad emoji -->
             <input id="sadBtn" type="radio" name="emoji" value="sad">
-            <label><img src="assets/sad.png" alt="Sad"></label>
-            <p><%= entries[ID].reactions["sad"] %></p>
+              <label><img src="assets/sad.png" alt="Sad"></label>
+                <p><%= entries[ID].reactions["sad"] %></p>
             <input type="hidden" name="entryID" id="entryID" value="<%= `${ID}` %>"><br>
           </div> 
           <button type="submit" class="btn btn-primary">Submit Emoji</button>
