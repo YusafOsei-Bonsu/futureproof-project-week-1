@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand|Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Gupter&display=swap');
 
 * {
   padding: 0;
@@ -87,6 +88,11 @@ li.nav-item form button:hover {
   margin-top: 10px;
   padding-top: 5px;
   padding-right: 27px;
+}
+
+form[action="/blogpage"] > p {
+  font-family: 'Gupter', serif;
+  font-size: 20px;
 }
 
 #emojiForm {
