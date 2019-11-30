@@ -103,7 +103,6 @@ server.post("/addPost", (req, res) => {
     // Storing the entry in the json file
     fs.writeFile("./blog.json", JSON.stringify(listOfEntries), "utf-8", err => {
       if (err) throw err;
-      console.log("Done!");
     });
   });
   //  Navigating back to the add-post page
@@ -143,7 +142,6 @@ server.post('/emoji', (req, res) => {
     // Storing the entry in the json file
     fs.writeFile("./blog.json", JSON.stringify(listOfEntries), "utf-8", err => {
        if (err) throw err;
-          console.log("Done!");
     });
   });
 
@@ -161,5 +159,5 @@ const generateID = () => {
   return ID;
 }
 
-// Listening to the server at an arbitrary port
+// Listening to the server at an arbitrary port or port 8080
 server.listen(port, () => console.log(`Listening to port ${port}`));
