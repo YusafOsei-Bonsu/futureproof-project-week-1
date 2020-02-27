@@ -1,19 +1,18 @@
 # in-blog-nito documentation
 View final project here: https://arcane-woodland-50822.herokuapp.com/
 
-
-[Harry Pendered-Mazer](https://github.com/harry-pm)  
-[Elizabeth Luong](https://github.com/elizabethluong/)
-[Yusaf Osei-Bonsu](https://github.com/YusafOsei-Bonsu)
-[Darnell Thomas](https://github.com/Darnell23)
+- [Harry Pendered-Mazer](https://github.com/harry-pm)  
+- [Elizabeth Luong](https://github.com/elizabethluong/)
+- [Yusaf Osei-Bonsu](https://github.com/YusafOsei-Bonsu)
+- [Darnell Thomas](https://github.com/Darnell23)
 
 ## Contents
 
-[Brief](#brief)
-[User Stories](#user-stories)
-[Methodologies and Processes](#methodologies-and-processes)
-[Reviewing the Process](#reviewing-the-process)
-[Reflections on the Project](#reflections-on-the-project)
+1. [Brief](#brief)
+2. [User Stories](#user-stories)
+3. [Methodologies and Processes](#methodologies-and-processes)
+4. [Reviewing the Process](#reviewing-the-process)
+5. [Reflections on the Project](#reflections-on-the-project)
 
 ## Brief
 
