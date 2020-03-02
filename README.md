@@ -1,5 +1,5 @@
 # in-blog-nito documentation
-View final project here: https://arcane-woodland-50822.herokuapp.com/
+View project here: https://arcane-woodland-50822.herokuapp.com/
 
 - [Harry Pendered-Mazer](https://github.com/harry-pm)  
 - [Elizabeth Luong](https://github.com/elizabethluong/)
